@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MLFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:space="preserve" xmlns="http://www.sato.co.jp/MLV5/MLFile">
+  <CreatorProductName>MLV5</CreatorProductName>
+  <CreatorProductVersion>Multi LABELIST V5 Ver.5.9.7</CreatorProductVersion>
+  <FileType>Global</FileType>
+  <FileVersion>30</FileVersion>
+  <DefaultPrinter />
+  <CodePageName>Shift_JIS</CodePageName>
+  <FileInfoSettings>
+    <Title />
+    <Comment />
+    <UserName>fujiit</UserName>
+    <PathType>Relative</PathType>
+  </FileInfoSettings>
+  <DesignSettings xsi:nil="true" xmlns="SATO.MLV5.Common.Design.Data" />
+  <InputSettings xsi:nil="true" xmlns="SATO.MLV5.Common.Input.Data" />
+  <LastVariableNumber>3</LastVariableNumber>
+  <Variables>
+    <VariableItem xmlns="SATO.MLV5.Common.Variable.Data">
+      <Number>
+        <Number>1</Number>
+        <Child>0</Child>
+      </Number>
+      <Name>attached_document_number_work_order_number</Name>
+      <Length>64</Length>
+      <Type>Input</Type>
+      <InputSettings>
+        <InputType>Char</InputType>
+        <GraphicType>Graphic</GraphicType>
+      </InputSettings>
+      <FixSettings xsi:nil="true" />
+      <CopySettings xsi:nil="true" />
+      <JoinSettings xsi:nil="true" />
+      <SequenceSettings xsi:nil="true" />
+      <DateTimeSettings xsi:nil="true" />
+      <CalculateSettings xsi:nil="true" />
+      <ConditionSettings xsi:nil="true" />
+      <SymbolSettings xsi:nil="true" />
+      <SystemSettings xsi:nil="true" />
+      <CharacterSettings xsi:nil="true" />
+      <AISettingInfo xsi:nil="true" />
+      <EditParameter>
+        <TableConvertSettings>
+          <IsEnabled>false</IsEnabled>
+          <TableReference>Local</TableReference>
+          <GlobalTableFile />
+          <TableName />
+          <TableCell>A</TableCell>
+          <IsKeyItemEnabled>false</IsKeyItemEnabled>
+          <ConvertKey>
+            <Number>0</Number>
+            <Child>0</Child>
+          </ConvertKey>
+        </TableConvertSettings>
+        <RemoveLineFeed>false</RemoveLineFeed>
+        <RemoveCharacterSettings>
+          <IsEnabled>false</IsEnabled>
+          <RemoveChar />
+        </RemoveCharacterSettings>
+        <TaxEditSettings>
+          <IsEnabled>false</IsEnabled>
+          <Type>Included</Type>
+          <RoundType>RoundDown</RoundType>
+          <RoundPoint>OnePlaceOfDecimals</RoundPoint>
+          <IsFixed>false</IsFixed>
+          <TaxSelectionType>User</TaxSelectionType>
+          <TaxSelectionNumber>0</TaxSelectionNumber>
+          <TaxRate>0</TaxRate>
+          <TaxVariableReference xsi:nil="true" />
+        </TaxEditSettings>
+        <CommaEdit>None</CommaEdit>
+        <PriceSymbolSettings>
+          <IsEnabled>false</IsEnabled>
+          <PriceSymbolType>SingleByte</PriceSymbolType>
+          <PriceSymbol>\</PriceSymbol>
+          <IsZeroToEmpty>false</IsZeroToEmpty>
+        </PriceSymbolSettings>
+        <AddCharacterSettings>
+          <IsEnabled>false</IsEnabled>
+          <Position>Prefix</Position>
+          <AddChar />
+        </AddCharacterSettings>
+        <Alignment>None</Alignment>
+        <ReplaceSettings>
+          <IsEnabled>false</IsEnabled>
+          <Items />
+          <DoubleSubstitutionInvalidity>false</DoubleSubstitutionInvalidity>
+        </ReplaceSettings>
+        <ZeroFilling>false</ZeroFilling>
+        <SpecialEditSettings>
+          <IsEnabled>false</IsEnabled>
+          <LibraryName />
+          <ClassName />
+          <Argument />
+        </SpecialEditSettings>
+      </EditParameter>
+    </VariableItem>
+    <VariableItem xmlns="SATO.MLV5.Common.Variable.Data">
+      <Number>
+        <Number>2</Number>
+        <Child>0</Child>
+      </Number>
+      <Name>serial_within_work_order</Name>
+      <Length>3</Length>
+      <Type>Input</Type>
+      <InputSettings>
+        <InputType>Char</InputType>
+        <GraphicType>Graphic</GraphicType>
+      </InputSettings>
+      <FixSettings xsi:nil="true" />
+      <CopySettings xsi:nil="true" />
+      <JoinSettings xsi:nil="true" />
+      <SequenceSettings xsi:nil="true" />
+      <DateTimeSettings xsi:nil="true" />
+      <CalculateSettings xsi:nil="true" />
+      <ConditionSettings xsi:nil="true" />
+      <SymbolSettings xsi:nil="true" />
+      <SystemSettings xsi:nil="true" />
+      <CharacterSettings xsi:nil="true" />
+      <AISettingInfo xsi:nil="true" />
+      <EditParameter>
+        <TableConvertSettings>
+          <IsEnabled>false</IsEnabled>
+          <TableReference>Local</TableReference>
+          <GlobalTableFile />
+          <TableName />
+          <TableCell>A</TableCell>
+          <IsKeyItemEnabled>false</IsKeyItemEnabled>
+          <ConvertKey>
+            <Number>0</Number>
+            <Child>0</Child>
+          </ConvertKey>
+        </TableConvertSettings>
+        <RemoveLineFeed>false</RemoveLineFeed>
+        <RemoveCharacterSettings>
+          <IsEnabled>false</IsEnabled>
+          <RemoveChar />
+        </RemoveCharacterSettings>
+        <TaxEditSettings>
+          <IsEnabled>false</IsEnabled>
+          <Type>Included</Type>
+          <RoundType>RoundDown</RoundType>
+          <RoundPoint>OnePlaceOfDecimals</RoundPoint>
+          <IsFixed>false</IsFixed>
+          <TaxSelectionType>User</TaxSelectionType>
+          <TaxSelectionNumber>0</TaxSelectionNumber>
+          <TaxRate>0</TaxRate>
+          <TaxVariableReference xsi:nil="true" />
+        </TaxEditSettings>
+        <CommaEdit>None</CommaEdit>
+        <PriceSymbolSettings>
+          <IsEnabled>false</IsEnabled>
+          <PriceSymbolType>SingleByte</PriceSymbolType>
+          <PriceSymbol>\</PriceSymbol>
+          <IsZeroToEmpty>false</IsZeroToEmpty>
+        </PriceSymbolSettings>
+        <AddCharacterSettings>
+          <IsEnabled>false</IsEnabled>
+          <Position>Prefix</Position>
+          <AddChar />
+        </AddCharacterSettings>
+        <Alignment>None</Alignment>
+        <ReplaceSettings>
+          <IsEnabled>false</IsEnabled>
+          <Items />
+          <DoubleSubstitutionInvalidity>false</DoubleSubstitutionInvalidity>
+        </ReplaceSettings>
+        <ZeroFilling>false</ZeroFilling>
+        <SpecialEditSettings>
+          <IsEnabled>false</IsEnabled>
+          <LibraryName />
+          <ClassName />
+          <Argument />
+        </SpecialEditSettings>
+      </EditParameter>
+    </VariableItem>
+    <VariableItem xmlns="SATO.MLV5.Common.Variable.Data">
+      <Number>
+        <Number>3</Number>
+        <Child>0</Child>
+      </Number>
+      <Name>serial_count_for_work_order</Name>
+      <Length>3</Length>
+      <Type>Input</Type>
+      <InputSettings>
+        <InputType>Char</InputType>
+        <GraphicType>Graphic</GraphicType>
+      </InputSettings>
+      <FixSettings xsi:nil="true" />
+      <CopySettings xsi:nil="true" />
+      <JoinSettings xsi:nil="true" />
+      <SequenceSettings xsi:nil="true" />
+      <DateTimeSettings xsi:nil="true" />
+      <CalculateSettings xsi:nil="true" />
+      <ConditionSettings xsi:nil="true" />
+      <SymbolSettings xsi:nil="true" />
+      <SystemSettings xsi:nil="true" />
+      <CharacterSettings xsi:nil="true" />
+      <AISettingInfo xsi:nil="true" />
+      <EditParameter>
+        <TableConvertSettings>
+          <IsEnabled>false</IsEnabled>
+          <TableReference>Local</TableReference>
+          <GlobalTableFile />
+          <TableName />
+          <TableCell>A</TableCell>
+          <IsKeyItemEnabled>false</IsKeyItemEnabled>
+          <ConvertKey>
+            <Number>0</Number>
+            <Child>0</Child>
+          </ConvertKey>
+        </TableConvertSettings>
+        <RemoveLineFeed>false</RemoveLineFeed>
+        <RemoveCharacterSettings>
+          <IsEnabled>false</IsEnabled>
+          <RemoveChar />
+        </RemoveCharacterSettings>
+        <TaxEditSettings>
+          <IsEnabled>false</IsEnabled>
+          <Type>Included</Type>
+          <RoundType>RoundDown</RoundType>
+          <RoundPoint>OnePlaceOfDecimals</RoundPoint>
+          <IsFixed>false</IsFixed>
+          <TaxSelectionType>User</TaxSelectionType>
+          <TaxSelectionNumber>0</TaxSelectionNumber>
+          <TaxRate>0</TaxRate>
+          <TaxVariableReference xsi:nil="true" />
+        </TaxEditSettings>
+        <CommaEdit>None</CommaEdit>
+        <PriceSymbolSettings>
+          <IsEnabled>false</IsEnabled>
+          <PriceSymbolType>SingleByte</PriceSymbolType>
+          <PriceSymbol>\</PriceSymbol>
+          <IsZeroToEmpty>false</IsZeroToEmpty>
+        </PriceSymbolSettings>
+        <AddCharacterSettings>
+          <IsEnabled>false</IsEnabled>
+          <Position>Prefix</Position>
+          <AddChar />
+        </AddCharacterSettings>
+        <Alignment>None</Alignment>
+        <ReplaceSettings>
+          <IsEnabled>false</IsEnabled>
+          <Items />
+          <DoubleSubstitutionInvalidity>false</DoubleSubstitutionInvalidity>
+        </ReplaceSettings>
+        <ZeroFilling>false</ZeroFilling>
+        <SpecialEditSettings>
+          <IsEnabled>false</IsEnabled>
+          <LibraryName />
+          <ClassName />
+          <Argument />
+        </SpecialEditSettings>
+      </EditParameter>
+    </VariableItem>
+  </Variables>
+  <Graphics />
+  <SortSettings xsi:nil="true" xmlns="SATO.MLV5.Common.Sort.Data" />
+  <UpdateHistory xmlns="SATO.MLV5.Common.File.Data">
+    <Create>
+      <UpdateTime>2021-09-26T20:00:03.5656392+09:00</UpdateTime>
+      <Title />
+      <Comment />
+      <UserName>fujiit</UserName>
+      <ComputerName>JPDTOP-DGH4203</ComputerName>
+      <OS>Microsoft Windows 10 Enterprise </OS>
+      <OSVersion>Microsoft Windows NT 6.2.9200.0</OSVersion>
+      <ApplicationName>MLデザイン</ApplicationName>
+      <ApplicationEdition>Standard</ApplicationEdition>
+      <ApplicationVersion>5.9.7.0</ApplicationVersion>
+      <OperationMode>Basic</OperationMode>
+      <IsTrial>false</IsTrial>
+      <IsCompact>false</IsCompact>
+      <IsAutoSave>false</IsAutoSave>
+    </Create>
+    <Logs>
+      <UpdateHistoryItem>
+        <UpdateTime>2021-09-26T20:00:03.5656392+09:00</UpdateTime>
+        <Title />
+        <Comment />
+        <UserName>fujiit</UserName>
+        <ComputerName>JPDTOP-DGH4203</ComputerName>
+        <OS>Microsoft Windows 10 Enterprise </OS>
+        <OSVersion>Microsoft Windows NT 6.2.9200.0</OSVersion>
+        <ApplicationName>MLデザイン</ApplicationName>
+        <ApplicationEdition>Standard</ApplicationEdition>
+        <ApplicationVersion>5.9.7.0</ApplicationVersion>
+        <OperationMode>Basic</OperationMode>
+        <IsTrial>false</IsTrial>
+        <IsCompact>false</IsCompact>
+        <IsAutoSave>false</IsAutoSave>
+      </UpdateHistoryItem>
+    </Logs>
+  </UpdateHistory>
+</MLFile>

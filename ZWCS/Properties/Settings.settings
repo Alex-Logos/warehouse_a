@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Com.Nidec.Mes.BPTS_V2.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="APPLICATION_HEADER" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ZimVie Warehouse Control System</Value>
+    </Setting>
+    <Setting Name="APPLICATION_ENVIRONMENT_SETTINGS" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Settings_Tokyo</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

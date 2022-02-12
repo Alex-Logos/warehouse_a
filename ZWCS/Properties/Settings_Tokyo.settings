@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Com.ZimVie.Wcs.ZWCS.Properties" GeneratedClassName="Settings_Tokyo">
+  <Profiles />
+  <Settings>
+    <Setting Name="AUTHENTIFICATE_FLAG" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="APPLICATION_ENVIRONMENT_HEADER" Type="System.String" Scope="User">
+      <Value Profile="(Default)">東京倉庫</Value>
+    </Setting>
+    <Setting Name="CONNECTION_STRING" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Server=10.204.161.9;Port=5432;UserId=postgres;Password=postgres;Database=ZWCS_DEV2;CommandTimeout=300;</Value>
+    </Setting>
+    <Setting Name="SERVER_TIME_ZONE" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Tokyo Standard Time</Value>
+    </Setting>
+    <Setting Name="ApplicationTypeName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Com.ZimVie.Wcs.ZWCS.ZwcsMainForm</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

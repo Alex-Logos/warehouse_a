@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="zwce00001" xml:space="preserve">
+    <value>出荷通知参照番号を入力して下さい。</value>
+  </data>
+  <data name="zwce00002" xml:space="preserve">
+    <value>出荷通知参照番号[{0}]は、既にユーザー[{1}]が[{2}]に登録を完了しています。仕入先は[{3}]です。</value>
+  </data>
+  <data name="zwce00003" xml:space="preserve">
+    <value>対象の出荷通知データを取り込んで下さい。</value>
+  </data>
+  <data name="zwce00004" xml:space="preserve">
+    <value>仕入先を選択して下さい。</value>
+  </data>
+  <data name="zwce00005" xml:space="preserve">
+    <value>日付を選択して下さい。</value>
+  </data>
+  <data name="zwce00006" xml:space="preserve">
+    <value>不正なビジネスロジックが検出されました。システム管理者に連絡して下さい。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwce00007" xml:space="preserve">
+    <value>問題は検出されませんでした。</value>
+  </data>
+  <data name="zwce00008" xml:space="preserve">
+    <value>入力パラメーターがNULL参照、または不足しています。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwce00009" xml:space="preserve">
+    <value>出荷通知データ登録に失敗しました。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwce00010" xml:space="preserve">
+    <value>作業指図データ生成と登録に登録に失敗しました。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwce00011" xml:space="preserve">
+    <value>作業指図ヘッダーデータ生成と登録に登録に失敗しました。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwce00012" xml:space="preserve">
+    <value>作業指図明細データ生成と登録に登録に失敗しました。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwce00013" xml:space="preserve">
+    <value>品目マスタから、複数品目に対する添付文書管理番号群の取得に失敗しました。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwce00014" xml:space="preserve">
+    <value>作業指図ヘッダーテーブルからの既存指図番号の現在最大値取得に失敗しました。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwce00015" xml:space="preserve">
+    <value>作業指図ヘッダーテーブルへの登録が失敗しました。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwce00016" xml:space="preserve">
+    <value>作業指図明細データ生成に失敗しました。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwce00017" xml:space="preserve">
+    <value>作業指図における、ヘッダーデータと明細データに不整合が発生しました。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwce00018" xml:space="preserve">
+    <value>作業指図明細データ登録に失敗しました。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwce00019" xml:space="preserve">
+    <value>作業指図ヘッダーとPO番号の関連データを登録に失敗しました。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwce00020" xml:space="preserve">
+    <value>作業指示エクセルファイルの構造に問題が検出されました。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwce00021" xml:space="preserve">
+    <value>作業指図ヘッダーとPO番号の関連データ生成に失敗しました。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwce00022" xml:space="preserve">
+    <value>作業指図番号のフォーマットに不正が検知されました。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwce00023" xml:space="preserve">
+    <value>作業指図エクセルファイルの生成に失敗しました。対象作業指図番号：[{0}]</value>
+  </data>
+  <data name="zwce00024" xml:space="preserve">
+    <value>作業指図エクセルファイルの生成結果に問題が検知されました。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwce00025" xml:space="preserve">
+    <value>[{0}]件の作業指図の生成に成功しました。
+保存先ディレクトリ：
+{1}
+保存されたエクセルファイル：
+{2}</value>
+  </data>
+  <data name="zwce00026" xml:space="preserve">
+    <value>品目マスタラベル情報の取得に失敗しました。品目番号：[{0}]</value>
+  </data>
+  <data name="zwce00027" xml:space="preserve">
+    <value>作業指図明細からのラベルデータ生成に失敗しました。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwce00028" xml:space="preserve">
+    <value>不正なラベルデータが検出されました。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwce00029" xml:space="preserve">
+    <value>ラベル印字結果を正しく取得することができませんでした。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwce00030" xml:space="preserve">
+    <value>[{0}]製品ラベル： セット数[{1}]、枚数合計[{2}]
+社内物流ラベル： セット数[{3}]、枚数合計[{4}]
+製品ラベル発行済指図：
+[{5}]
+社内物流ラベル発行済指図：
+[{6}]</value>
+  </data>
+  <data name="zwce00031" xml:space="preserve">
+    <value>ラベルプリンターのポートオープンに失敗しました。発生箇所[{0}]、実行結果[{1}]</value>
+  </data>
+  <data name="zwce00032" xml:space="preserve">
+    <value>ラベルプリンターのOUTPUTコマンドの実行結果に不正が検出されました。発生箇所[{0}]、実行結果[{1}]</value>
+  </data>
+  <data name="zwce00033" xml:space="preserve">
+    <value>不正なラベルタイプの値が検出されました。発生箇所[{0}]、不正値[{1}]</value>
+  </data>
+  <data name="zwce00034" xml:space="preserve">
+    <value>品目[{0}]は、マスタにてラベル不要（ラベルタイプ = 0）と登録されています。</value>
+  </data>
+  <data name="zwce00035" xml:space="preserve">
+    <value>ラベルが正常に印刷されました。</value>
+  </data>
+  <data name="zwce00036" xml:space="preserve">
+    <value>JANコードーをキーとした、品目マスタからの品目番号取得に失敗しました。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwce00037" xml:space="preserve">
+    <value>1つのJANコードーに対し、2つ以上の品目番号が存在しています。品目マスタを修正して下さい。JAN：[{0}]、品目：[{1}]</value>
+  </data>
+  <data name="zwce00038" xml:space="preserve">
+    <value>読み取られた指図明細情報の文字列の長さが正しくありせまん。文字列：[{0}]</value>
+  </data>
+  <data name="zwce00039" xml:space="preserve">
+    <value>読み取られたバーコード文字列が、GS1-128のフォーマットと合致していません（GTIN識別子01で始まっていない）。文字列：[{0}]</value>
+  </data>
+  <data name="zwce00040" xml:space="preserve">
+    <value>読み取られたバーコード文字列が、GS1-128のフォーマットと合致していません（長さが19未満）。文字列：[{0}]</value>
+  </data>
+  <data name="zwce00041" xml:space="preserve">
+    <value>読み取られたバーコード文字列が、GS1-128のフォーマットと合致していません（ロット識別子10が所定の位置にない）。文字列：[{0}]</value>
+  </data>
+  <data name="zwce00042" xml:space="preserve">
+    <value>読み取られたバーコード文字列から、製品番号とロットの取得に失敗しました。文字列：[{0}]</value>
+  </data>
+  <data name="zwce00043" xml:space="preserve">
+    <value>製品バーコードが、指図明細とラベルで一致していません。
+指図明細：[{0}]
+ラベル：[{1}]</value>
+  </data>
+  <data name="zwce00044" xml:space="preserve">
+    <value>製品番号が、指図明細のと現物で一致していません。
+指図製品番号：[{0}]
+旧システム製品番号：[{1}]
+仕入先製品番号：[{2}]
+現物：[{3}]</value>
+  </data>
+  <data name="zwce00045" xml:space="preserve">
+    <value>ロット番号が、指図明細と現物で一致していません。
+指図明細：[{0}]
+現物：[{1}]
+
+製品番号のスキャンからやり直して下さい。</value>
+  </data>
+  <data name="zwce00046" xml:space="preserve">
+    <value>指図明細の製品数量が無効です。製品数量：[{0}]</value>
+  </data>
+  <data name="zwci00001" xml:space="preserve">
+    <value>指図明細に対して、製品番号とロットの照合が完了ました。
+指図番号[{1}]
+明細番号[{2}]
+数量　　[{0}]</value>
+  </data>
+  <data name="zwce00047" xml:space="preserve">
+    <value>指図明細に対して、現物との照合を全数をやり直しして下さい。</value>
+  </data>
+  <data name="zwci00002" xml:space="preserve">
+    <value>指図明細の数量と、スキャンした現物の数量一致しました。
+指図数量 [{0}]
+現物数量 [{0}]
+
+正しいですか？</value>
+  </data>
+  <data name="zwce00048" xml:space="preserve">
+    <value>製品番号が、指図明細のと現物で一致していません。
+指図製品番号：[{0}]
+現物：[{1}]
+旧システム製品番号：[品目マスタに値なし]
+仕入先製品番号：[品目マスタに値なし]</value>
+  </data>
+  <data name="zwce00049" xml:space="preserve">
+    <value>品目マスタの更新と新規登録において、異常が感知されました。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwci00003" xml:space="preserve">
+    <value>Kintoneの品目マスタに、更新または新規登録された品目は見つかりませんでした。</value>
+  </data>
+  <data name="zwci00004" xml:space="preserve">
+    <value>Kintoneの品目マスタに、新規登録された品目のみ見つかりました。</value>
+  </data>
+  <data name="zwce00050" xml:space="preserve">
+    <value>不要な入力パラメーターが設定されています。発生箇所：[{0}]</value>
+  </data>
+  <data name="zwce00051" xml:space="preserve">
+    <value>ZWCS品目マスタからの、最新更新時刻取得に失敗しました。</value>
+  </data>
+  <data name="zwce00052" xml:space="preserve">
+    <value>ZWCS品目マスタ更新履歴の登録に失敗しました。</value>
+  </data>
+  <data name="zwce00053" xml:space="preserve">
+    <value>ZWCS品目マスタ更新のプロセスにおいて、レコードの一時削除に失敗しました。</value>
+  </data>
+  <data name="zwce00054" xml:space="preserve">
+    <value>ZWCS品目マスタ更新のプロセスにおいて、レコードの新規作成に失敗しました。</value>
+  </data>
+  <data name="zwci00005" xml:space="preserve">
+    <value>ZWCSの品目マスタに、更新履歴の登録が必要な品目は見つかりませんでした。</value>
+  </data>
+  <data name="zwci00006" xml:space="preserve">
+    <value>Kintone品目マスタの変更が、ZWCS品目マスタに反映されました。
+更新品目：[{0}]
+新規品目：[{1}]</value>
+  </data>
+  <data name="zwce00055" xml:space="preserve">
+    <value>更新されたキントーン品目マスタのレコードに、ZWCSアプリケーションの仕様を満たしていない値が見つかりました：
+[{0}]</value>
+  </data>
+  <data name="zwce00056" xml:space="preserve">
+    <value>出荷通知ファイルを選択して下さい。</value>
+  </data>
+  <data name="zwce00057" xml:space="preserve">
+    <value>出荷通知ファイルの形式が不正です。エクセルファイルを使用して下さい。</value>
+  </data>
+</root>
