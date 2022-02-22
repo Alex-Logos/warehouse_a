@@ -8046,12 +8046,12 @@
         <Child>0</Child>
       </Number>
       <Name>製造販売業者</Name>
-      <Length>43</Length>
+      <Length>40</Length>
       <Type>Fix</Type>
       <InputSettings xsi:nil="true" />
       <FixSettings>
         <DataType>Char</DataType>
-        <FixedData>製造販売業者：ｼﾞﾝﾏｰ・ﾊﾞｲｵﾒｯﾄ・ﾃﾞﾝﾀﾙ合同会社</FixedData>
+        <FixedData>製造販売業者：ジンヴィ・ジャパン合同会社</FixedData>
         <IsFixString>false</IsFixString>
       </FixSettings>
       <CopySettings xsi:nil="true" />
@@ -8763,6 +8763,22 @@
       <IsAutoSave>false</IsAutoSave>
     </Create>
     <Logs>
+      <UpdateHistoryItem>
+        <UpdateTime>2022-02-22T10:00:05.0546945+09:00</UpdateTime>
+        <Title />
+        <Comment />
+        <UserName>fujiit</UserName>
+        <ComputerName>JPDTOP-DGH4203</ComputerName>
+        <OS>Microsoft Windows 10 Enterprise </OS>
+        <OSVersion>Microsoft Windows NT 6.2.9200.0</OSVersion>
+        <ApplicationName>MLデザイン</ApplicationName>
+        <ApplicationEdition>Standard</ApplicationEdition>
+        <ApplicationVersion>5.9.7.0</ApplicationVersion>
+        <OperationMode>Advance</OperationMode>
+        <IsTrial>false</IsTrial>
+        <IsCompact>false</IsCompact>
+        <IsAutoSave>false</IsAutoSave>
+      </UpdateHistoryItem>
       <UpdateHistoryItem>
         <UpdateTime>2021-11-10T15:34:01.5426488+09:00</UpdateTime>
         <Title />
