@@ -1,7 +1,7 @@
-﻿# A5:ER FORMAT:15
+﻿# A5:ER FORMAT:16
 # A5:ER ENCODING:UTF8
 # A5:ER Mk-1 Copyright © 2007 m.matsubara
-# A5:SQL Mk-2 Version 2.16.1 Copyright © 1997 - 2021 m.matsubara
+# A5:SQL Mk-2 Version 2.17.0 Copyright © 1997 - 2022 m.matsubara
 #  https://a5m2.mmatsubara.com
 
 [Manager]
@@ -39,6 +39,7 @@ SqlSeparator=0
 UpperCaseKeyword=0
 ShowTag=1
 ShowCommonAttributes=0
+BugFixEntityWidth=0
 
 [Relation]
 Entity1=t_shipping_notice
@@ -412,7 +413,7 @@ PName=m_item_history
 LName=m_item_history
 Comment=
 TableOption=
-Page=Main
+Page=MAIN
 Left=2500
 Top=400
 Field="item_number","item_number","@VARCHAR(32)","NOT NULL",,"","",$FFFFFFFF,""
@@ -454,5 +455,5 @@ EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
 ModifiedDateTime=20211111134942
-Position="Main",2500,400,516,963
+Position="MAIN",2500,400,516,963
 ZOrder=-14

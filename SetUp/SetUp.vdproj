@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_0125021C9DF3479A9D90C4124FEA74B4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_3D662DABBF8FAA72B6B2691405523743"
         "OwnerKey" = "8:_5721ACD5AD0CDB8B12E168D56479DC85"
         "MsmSig" = "8:_UNDEFINED"
@@ -33,7 +39,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_90ADABB7AC224C6DB9E75FFB97BF08F5"
+        "MsmKey" = "8:_5FE97B4F1C1D419F992D4917A080257A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -204,6 +210,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0125021C9DF3479A9D90C4124FEA74B4"
+            {
+            "SourcePath" = "8:ZWCS (ZimVie Warehouse Control System) Overview 20220222.pdf"
+            "TargetName" = "8:ZWCS (ZimVie Warehouse Control System) Overview 20220222.pdf"
+            "Tag" = "8:"
+            "Folder" = "8:_121C4EC39DAB47D99A3D8A5DDF4436F8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3D662DABBF8FAA72B6B2691405523743"
             {
             "AssemblyRegister" = "3:1"
@@ -266,10 +292,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_90ADABB7AC224C6DB9E75FFB97BF08F5"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5FE97B4F1C1D419F992D4917A080257A"
             {
-            "SourcePath" = "8:C:\\Users\\fujiit\\Desktop\\ZWCS (ZimVie Warehouse Control System) Overview 20220212.pdf"
-            "TargetName" = "8:ZWCS (ZimVie Warehouse Control System) Overview 20220212.pdf"
+            "SourcePath" = "8:ZWCS (ZimVie Warehouse Control System) Overview 20220222.pptx"
+            "TargetName" = "8:ZWCS (ZimVie Warehouse Control System) Overview 20220222.pptx"
             "Tag" = "8:"
             "Folder" = "8:_121C4EC39DAB47D99A3D8A5DDF4436F8"
             "Condition" = "8:"
@@ -282,7 +308,7 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:FALSE"
+            "Exclude" = "11:TRUE"
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
