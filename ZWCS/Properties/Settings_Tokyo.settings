@@ -9,7 +9,7 @@
       <Value Profile="(Default)">東京倉庫</Value>
     </Setting>
     <Setting Name="CONNECTION_STRING" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Server=10.204.161.9;Port=5432;UserId=postgres;Password=postgres;Database=ZWCS_DEV2;CommandTimeout=300;</Value>
+      <Value Profile="(Default)">Server=localhost;Port=5432;UserId=postgres;Password=postgres;Database=ZWCS_DEV2;CommandTimeout=300;</Value>
     </Setting>
     <Setting Name="SERVER_TIME_ZONE" Type="System.String" Scope="User">
       <Value Profile="(Default)">Tokyo Standard Time</Value>
