@@ -54,9 +54,11 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
             string newFileDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
-            string newFileName = newFileDirectory + "\\" + newFileNameForUser;
+            string newFileName = Path.Combine(newFileDirectory, newFileNameForUser);
 
-            string templateFileName = System.Windows.Forms.Application.StartupPath + "\\" + "WorkOrderExcelFormat.xlsm";
+            string appFileDirectory = System.Windows.Forms.Application.StartupPath;
+
+            string templateFileName = Path.Combine(appFileDirectory, "Common", "WorkOrderExcelFormat.xlsm");
 
             File.Copy(templateFileName, newFileName, true);
 
