@@ -25,7 +25,6 @@ namespace Com.ZimVie.Wcs.ZWCS.Dao
             sqlQuery.Append(" shipping_notice_issue_date, ");
             sqlQuery.Append(" source_type_inventory, ");
             sqlQuery.Append(" supplier_number, ");
-            sqlQuery.Append(" shipping_notice_operation_stage, ");
             sqlQuery.Append(" registration_user_cd, ");
             sqlQuery.Append(" registration_date_time,");
             sqlQuery.Append(" warehouse_cd ");
@@ -36,7 +35,6 @@ namespace Com.ZimVie.Wcs.ZWCS.Dao
             sqlQuery.Append(" :shippingNoticeIssueDate, ");
             sqlQuery.Append(" :sourceTypeInventory, ");
             sqlQuery.Append(" :supplierNumber, ");
-            sqlQuery.Append(" :shippingNoticeOperationStage, ");
             sqlQuery.Append(" :registrationUserCode, ");
             sqlQuery.Append(" :registrationDateTime, ");
             sqlQuery.Append(" :factoryCode ");
@@ -52,7 +50,6 @@ namespace Com.ZimVie.Wcs.ZWCS.Dao
             sqlParameter.AddParameterDateTime("shippingNoticeIssueDate", inVo.ShippingNoticeIssueDate);
             sqlParameter.AddParameter("sourceTypeInventory", inVo.SourceTypeInventory);
             sqlParameter.AddParameterString("supplierNumber", inVo.SupplierNumber);
-            sqlParameter.AddParameterInteger("shippingNoticeOperationStage", inVo.ShippingNoticeOperationStage);
             sqlParameter.AddParameterString("registrationUserCode", UserData.GetUserData().UserCode);
             sqlParameter.AddParameterDateTime("registrationDateTime", trxContext.ProcessingDBDateTime);
             sqlParameter.AddParameterString("factoryCode", UserData.GetUserData().FactoryCode);

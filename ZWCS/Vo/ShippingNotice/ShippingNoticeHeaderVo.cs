@@ -16,14 +16,5 @@ namespace Com.ZimVie.Wcs.ZWCS.Vo
 
         public string SupplierNumber { get; set; }
 
-        public int ShippingNoticeOperationStage { get; set; }
-
-        public string RegistrationUserCode { get; set; }
-
-        public DateTime RegistrationDateTime { get; set; }
-
-        public string WarehouseCode { get; set; }
-
-
     }
 }

@@ -35,7 +35,10 @@ namespace Com.ZimVie.Wcs.ZWCS.Dao
             //create SQL
             StringBuilder sqlQuery = new StringBuilder();
             sqlQuery.Append("SELECT ");
-            sqlQuery.Append(" i.attached_document_control_number, ");
+            sqlQuery.Append(" sl.purchase_order_number, ");
+            sqlQuery.Append(" sl.commercial_invoice_number, ");
+            sqlQuery.Append(" i.packing_material_1, ");
+            sqlQuery.Append(" i.standard_work_instruction, ");
             sqlQuery.Append(" sl.item_number, ");
             sqlQuery.Append(" sl.lot_number, ");
             sqlQuery.Append(" SUM(sl.lot_quantity) ::INTEGER AS lot_quantity, ");
@@ -45,9 +48,7 @@ namespace Com.ZimVie.Wcs.ZWCS.Dao
             sqlQuery.Append(" MAX(i.jan_number) AS jan_number, ");
             sqlQuery.Append(" MAX(i.pdoruct_name) AS pdoruct_name, ");
             sqlQuery.Append(" MAX(i.pdoruct_category) AS pdoruct_category, ");
-            sqlQuery.Append(" MAX(i.packing_material_1) AS packing_material_1, ");
             sqlQuery.Append(" MAX(i.packing_material_2) AS packing_material_2, ");
-            sqlQuery.Append(" MAX(i.standard_work_instruction) AS standard_work_instruction, ");
             sqlQuery.Append(" MAX(i.additional_work_instruction) AS additional_work_instruction, ");
             sqlQuery.Append(" MAX(i.label_type) AS label_type ");
             sqlQuery.Append("FROM t_shipping_notice_line sl ");
@@ -55,11 +56,17 @@ namespace Com.ZimVie.Wcs.ZWCS.Dao
             sqlQuery.Append("WHERE sl.warehouse_cd = :warehouseCode ");
             sqlQuery.Append(" AND sl.shipping_notice_id = :shippingNoticeId ");
             sqlQuery.Append("GROUP BY ");
-            sqlQuery.Append(" i.attached_document_control_number, ");
+            sqlQuery.Append(" sl.purchase_order_number, ");
+            sqlQuery.Append(" sl.commercial_invoice_number, ");
+            sqlQuery.Append(" i.packing_material_1, ");
+            sqlQuery.Append(" i.standard_work_instruction, ");
             sqlQuery.Append(" sl.item_number, ");
             sqlQuery.Append(" sl.lot_number ");
             sqlQuery.Append("ORDER BY ");
-            sqlQuery.Append(" i.attached_document_control_number, ");
+            sqlQuery.Append(" sl.purchase_order_number, ");
+            sqlQuery.Append(" sl.commercial_invoice_number, ");
+            sqlQuery.Append(" i.packing_material_1, ");
+            sqlQuery.Append(" i.standard_work_instruction, ");
             sqlQuery.Append(" sl.item_number, ");
             sqlQuery.Append(" sl.lot_number ");
 
@@ -79,7 +86,10 @@ namespace Com.ZimVie.Wcs.ZWCS.Dao
             while (dataReader.Read())
             {
                 WorkOrderLineVo vo = new WorkOrderLineVo();
-                vo.AttachedDocumentControlNumber = ConvertDBNull<string>(dataReader, "attached_document_control_number");
+                vo.PurchaseOrderNumber = ConvertDBNull<string>(dataReader, "purchase_order_number");
+                vo.CommercialInvoiceNumber = ConvertDBNull<string>(dataReader, "commercial_invoice_number");
+                vo.PackingMaterial1 = ConvertDBNull<string>(dataReader, "packing_material_1");
+                vo.StandardWorkInstruction= ConvertDBNull<string>(dataReader, "standard_work_instruction");
                 vo.ItemNumber = ConvertDBNull<string>(dataReader, "item_number");
                 vo.LotNumber = ConvertDBNull<string>(dataReader, "lot_number");
                 vo.LotQuantity = ConvertDBNull<int>(dataReader, "lot_quantity");

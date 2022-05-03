@@ -64,11 +64,14 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
             // 2. Assign work order id, serial within work order, and page withing work order
 
-            List<string> lineDocuments = lines.Select(l => l.AttachedDocumentControlNumber).Distinct().ToList();
+            List<Tuple<string, string, string, string>> lineKeys = lines.Select(
+                l => new Tuple<string, string, string, string>(l.PurchaseOrderNumber, l.CommercialInvoiceNumber, l.PackingMaterial1, l.StandardWorkInstruction)).Distinct().ToList();
 
-            Dictionary<string, int> documentOrderPairs = headers.ToDictionary(h => h.AttachedDocumentControlNumber, h => h.WorkOrderId);
+            Dictionary<Tuple<string, string, string, string >, int> keyOrderIdPairs = headers.ToDictionary(
+                    h => new Tuple<string, string, string, string>(h.PurchaseOrderNumber, h.CommercialInvoiceNumber, h.PackingMaterial1, h.StandardWorkInstruction), 
+                    h => h.WorkOrderId);
 
-            if (lineDocuments.Count != documentOrderPairs.Count)
+            if (lineKeys.Count != keyOrderIdPairs.Count)
             {
                 var messageData = new MessageData("zwce00017", Properties.Resources.zwce00017, nameof(aggregateShippingNoticeToWorkOrderLineDao));
                 logger.Error(messageData);
@@ -77,27 +80,34 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
             int previousWorkOrderId = 0;
             int previousSerialWithinWorkOrder = 0;
-            int previousPageWithinWorkOrder = 0;
+            int previousPageWithinWorkOrderSubNumber = 0;
 
             foreach (WorkOrderLineVo line in lines)
             {
                 // Assign work order id
-                line.WorkOrderId = documentOrderPairs[line.AttachedDocumentControlNumber];
-
+                var key = new Tuple<string, string, string, string>(line.PurchaseOrderNumber, line.CommercialInvoiceNumber, line.PackingMaterial1, line.StandardWorkInstruction);
+                line.WorkOrderId = keyOrderIdPairs[key];
+ 
                 // Assign serial within work order
                 bool isWorkOrderIdNew = line.WorkOrderId != previousWorkOrderId;
-
                 line.SerialWithinWorkOrder = isWorkOrderIdNew ? 1 : previousSerialWithinWorkOrder + 1;
 
-                // Assign page within work order
-                bool isSerialFirstInNextPage = (line.SerialWithinWorkOrder % 3) == 1;
+                // Assign work order sub number
+                bool isReminderZero = line.SerialWithinWorkOrder % 12 == 0;
+                line.WorkOrderSubNumber = isReminderZero ? (line.SerialWithinWorkOrder / 12) : (line.SerialWithinWorkOrder / 12) + 1;
 
-                line.PageWithinWorkOrder = isWorkOrderIdNew ? 1 : isSerialFirstInNextPage ? previousPageWithinWorkOrder + 1 : previousPageWithinWorkOrder;
+                // Assign serial within work order sub number
+                line.SerialWithinWorkOrderSubNumber = line.SerialWithinWorkOrder - (12 * (line.WorkOrderSubNumber - 1));
+
+                // Assign page within work order sub number
+                bool isSerialOne = line.SerialWithinWorkOrderSubNumber == 1;
+                bool isSerialFirstInPage = (line.SerialWithinWorkOrderSubNumber % 3) == 1;
+                line.PageWithinWorkOrderSubNumber = isSerialOne ? 1 : isSerialFirstInPage ? previousPageWithinWorkOrderSubNumber + 1 : previousPageWithinWorkOrderSubNumber;
 
                 // Hold values into local variables for the next line's evaluation
                 previousWorkOrderId = line.WorkOrderId;
                 previousSerialWithinWorkOrder = line.SerialWithinWorkOrder;
-                previousPageWithinWorkOrder = line.PageWithinWorkOrder;
+                previousPageWithinWorkOrderSubNumber = line.PageWithinWorkOrderSubNumber;
             }
 
 

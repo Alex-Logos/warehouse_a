@@ -6,7 +6,15 @@ namespace Com.ZimVie.Wcs.ZWCS.Vo
 {
     public class WorkOrderLineVo : ValueObject
     {
-        public string AttachedDocumentControlNumber { get; set; }
+
+        public string PurchaseOrderNumber { get; set; }
+
+        public string CommercialInvoiceNumber { get; set; }
+
+        public string PackingMaterial1 { get; set; }
+
+        public string StandardWorkInstruction { get; set; }
+
 
         public int WorkOrderLineId { get; set; }
 
@@ -14,7 +22,11 @@ namespace Com.ZimVie.Wcs.ZWCS.Vo
 
         public int SerialWithinWorkOrder { get; set; }
 
-        public int PageWithinWorkOrder { get; set; }
+        public int WorkOrderSubNumber { get; set; }
+
+        public int SerialWithinWorkOrderSubNumber { get; set; }
+
+        public int PageWithinWorkOrderSubNumber { get; set; }
 
         public string ItemNumber { get; set; }
 
@@ -34,11 +46,7 @@ namespace Com.ZimVie.Wcs.ZWCS.Vo
 
         public int LotQuantity { get; set; }
 
-        public string PackingMaterial1 { get; set; }
-
         public string PackingMaterial2 { get; set; }
-
-        public string StandardWorkInstruction { get; set; }
 
         public string AdditionalWorkInstruction { get; set; }
 

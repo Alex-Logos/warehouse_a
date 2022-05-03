@@ -8,8 +8,6 @@ using System;
 using Com.ZimVie.Wcs.Framework;
 using Com.ZimVie.Wcs.ZWCS.Vo;
 using Com.ZimVie.Wcs.ZWCS.Dao;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace Com.ZimVie.Wcs.ZWCS.Cbm
 {
@@ -27,8 +25,8 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
         public ValueObject Execute(TransactionContext trxContext, ValueObject vo)
         {
-            var inVo = (ShippingNoticeTrackingNumberVo)vo;
-            
+
+            var inVo = (ShippingNoticeTrackingNumberVo)vo; 
 
             if (string.IsNullOrEmpty(inVo.ShippingNoticeTrackingNumber))
             {
@@ -38,7 +36,8 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
                 throw new Framework.ApplicationException(messageData, new NullReferenceException());
             }
 
-            var outVo = readShippingNoticeTrackingNumberDao.Execute(trxContext, vo) as ShippingNoticeTrackingNumberVo;
+
+            var outVo = readShippingNoticeTrackingNumberDao.Execute(trxContext, inVo) as ShippingNoticeTrackingNumberVo;
 
             if (outVo != null)
             {

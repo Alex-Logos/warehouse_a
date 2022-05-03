@@ -10,6 +10,5 @@ namespace Com.ZimVie.Wcs.ZWCS.Vo
 
         public string ShippingNoticeTrackingNumberr;
 
-        public List<string> ShippingNoticeLineItems;
     }
 }

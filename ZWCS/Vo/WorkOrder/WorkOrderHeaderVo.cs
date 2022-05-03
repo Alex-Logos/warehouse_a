@@ -12,15 +12,15 @@ namespace Com.ZimVie.Wcs.ZWCS.Vo
 
         public int ShippingNoticeId { get; set; }
 
-        public string AttachedDocumentControlNumber { get; set; }
+        public string PurchaseOrderNumber { get; set; }
 
-        public string AttachedDocumentLocator { get; set; }
+        public string CommercialInvoiceNumber { get; set; }
 
-        public int WorkOrderOperationStage { get; set; }
+        public string PackingMaterial1 { get; set; }
+
+        public string StandardWorkInstruction { get; set; }
 
         public string ShippingNoticeTrackingNumber { get; set; }
-
-        public List<string> PurchaseOrderNumbers { get; set; }
 
 
     }

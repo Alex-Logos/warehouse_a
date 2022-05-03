@@ -32,7 +32,9 @@ namespace Com.ZimVie.Wcs.ZWCS.Dao
             sqlQuery.Append("( ");
             sqlQuery.Append(" work_order_id, ");
             sqlQuery.Append(" serial_within_work_order, ");
-            sqlQuery.Append(" page_within_work_order, ");
+            sqlQuery.Append(" work_order_sub_number, ");
+            sqlQuery.Append(" serial_within_work_order_sub_number, ");
+            sqlQuery.Append(" page_within_work_order_sub_number, ");
             sqlQuery.Append(" item_number, ");
             sqlQuery.Append(" supplier_item_number, ");
             sqlQuery.Append(" item_description_japanese, ");
@@ -42,9 +44,7 @@ namespace Com.ZimVie.Wcs.ZWCS.Dao
             sqlQuery.Append(" lot_number, ");
             sqlQuery.Append(" lot_expiration_date, ");
             sqlQuery.Append(" lot_quantity, ");
-            sqlQuery.Append(" packing_material_1, ");
             sqlQuery.Append(" packing_material_2, ");
-            sqlQuery.Append(" standard_work_instruction, ");
             sqlQuery.Append(" additional_work_instruction, ");
             sqlQuery.Append(" label_type, ");
             sqlQuery.Append(" registration_user_cd,");
@@ -59,7 +59,9 @@ namespace Com.ZimVie.Wcs.ZWCS.Dao
                 sqlQuery.Append("( ");
                 sqlQuery.Append(" :workOrderId" + index + ",");
                 sqlQuery.Append(" :serialWithinWorkOrder" + index + ",");
-                sqlQuery.Append(" :pageWithinWorkOrder" + index + ",");
+                sqlQuery.Append(" :workOrderSubNumber" + index + ",");
+                sqlQuery.Append(" :serialWithinWorkOrderSubNumber" + index + ",");
+                sqlQuery.Append(" :pageWithinWorkOrderSubNumber" + index + ",");
                 sqlQuery.Append(" :itemNumber" + index + ",");
                 sqlQuery.Append(" :supplierItemNumber" + index + ",");
                 sqlQuery.Append(" :itemDescriptionJapanese" + index + ",");
@@ -69,9 +71,7 @@ namespace Com.ZimVie.Wcs.ZWCS.Dao
                 sqlQuery.Append(" :lotNumber" + index + ",");
                 sqlQuery.Append(" :lotExpirationDate" + index + ",");
                 sqlQuery.Append(" :lotQuantity" + index + ",");
-                sqlQuery.Append(" :packingMaterial1" + index + ",");
                 sqlQuery.Append(" :packingMaterial2" + index + ",");
-                sqlQuery.Append(" :standardWorkInstruction" + index + ",");
                 sqlQuery.Append(" :additonalWorkInstruction" + index + ",");
                 sqlQuery.Append(" :labelType" + index + ",");
                 sqlQuery.Append(" :registrationUserCode" + index + ",");
@@ -93,7 +93,9 @@ namespace Com.ZimVie.Wcs.ZWCS.Dao
                 string index = lines.IndexOf(line).ToString();
                 sqlParameter.AddParameterInteger("workOrderId" + index, line.WorkOrderId);
                 sqlParameter.AddParameterInteger("serialWithinWorkOrder" + index, line.SerialWithinWorkOrder);
-                sqlParameter.AddParameterInteger("pageWithinWorkOrder" + index, line.PageWithinWorkOrder);
+                sqlParameter.AddParameterInteger("workOrderSubNumber" + index, line.WorkOrderSubNumber);
+                sqlParameter.AddParameterInteger("serialWithinWorkOrderSubNumber" + index, line.SerialWithinWorkOrderSubNumber);
+                sqlParameter.AddParameterInteger("pageWithinWorkOrderSubNumber" + index, line.PageWithinWorkOrderSubNumber);
                 sqlParameter.AddParameterString("itemNumber" + index, line.ItemNumber);
                 sqlParameter.AddParameterString("supplierItemNumber" + index, line.SupplierItemNumber);
                 sqlParameter.AddParameterString("itemDescriptionJapanese" + index, line.ItemDescriptionJapanese);
@@ -103,9 +105,7 @@ namespace Com.ZimVie.Wcs.ZWCS.Dao
                 sqlParameter.AddParameterString("lotNumber" + index, line.LotNumber);
                 sqlParameter.AddParameterDateTime("lotExpirationDate" + index, line.LotExpirationDate);
                 sqlParameter.AddParameterInteger("lotQuantity" + index, line.LotQuantity);
-                sqlParameter.AddParameterString("packingMaterial1" + index, line.PackingMaterial1);
                 sqlParameter.AddParameterString("packingMaterial2" + index, line.PackingMaterial2);
-                sqlParameter.AddParameterString("standardWorkInstruction" + index, line.StandardWorkInstruction);
                 sqlParameter.AddParameterString("additonalWorkInstruction" + index, line.AdditionalWorkInstruction);
                 sqlParameter.AddParameterInteger("labelType" + index, line.LabelType);
                 sqlParameter.AddParameterString("registrationUserCode" + index, UserData.GetUserData().UserCode);

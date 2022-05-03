@@ -25,30 +25,34 @@ namespace Com.ZimVie.Wcs.ZWCS.Dao
 
             WorkOrderHeaderCreationVo inVo = arg as WorkOrderHeaderCreationVo;
 
-            List<string> items = inVo?.ShippingNoticeLineItems;
-
-            if (inVo == null || items == null || items.Count <= 0)
+            if (inVo == null || inVo.ShippingNoticeId == 0)
             {
                 var messageData = new MessageData("zwce00008", Properties.Resources.zwce00008, nameof(AggregateShippingNoticeToWorkOrderHeaderDao));
                 logger.Error(messageData);
                 throw new Framework.ApplicationException(messageData);
             }
 
-
             //create SQL
             StringBuilder sqlQuery = new StringBuilder();
             sqlQuery.Append("SELECT ");
-            sqlQuery.Append(" attached_document_control_number, ");
-            sqlQuery.Append(" attached_document_locator ");
-            sqlQuery.Append("FROM m_item ");
-            sqlQuery.Append("WHERE warehouse_cd = :warehouseCode ");
-            sqlQuery.Append(" AND item_number = ANY(:itemNumberList) ");
+            sqlQuery.Append(" sl.purchase_order_number, ");
+            sqlQuery.Append(" sl.commercial_invoice_number, ");
+            sqlQuery.Append(" i.packing_material_1, ");
+            sqlQuery.Append(" i.standard_work_instruction ");
+            sqlQuery.Append("FROM t_shipping_notice_line sl ");
+            sqlQuery.Append(" INNER JOIN m_item i USING(item_number) ");
+            sqlQuery.Append("WHERE sl.warehouse_cd = :warehouseCode ");
+            sqlQuery.Append(" AND sl.shipping_notice_id = :shippingNoticeId ");
             sqlQuery.Append("GROUP BY ");
-            sqlQuery.Append(" attached_document_control_number, ");
-            sqlQuery.Append(" attached_document_locator ");
+            sqlQuery.Append(" sl.purchase_order_number, ");
+            sqlQuery.Append(" sl.commercial_invoice_number, ");
+            sqlQuery.Append(" i.packing_material_1, ");
+            sqlQuery.Append(" i.standard_work_instruction ");
             sqlQuery.Append("ORDER BY ");
-            sqlQuery.Append(" attached_document_control_number, ");
-            sqlQuery.Append(" attached_document_locator ");
+            sqlQuery.Append(" sl.purchase_order_number, ");
+            sqlQuery.Append(" sl.commercial_invoice_number, ");
+            sqlQuery.Append(" i.packing_material_1, ");
+            sqlQuery.Append(" i.standard_work_instruction ");
 
             //create command
             DbCommandAdaptor sqlCommandAdapter = base.GetDbCommandAdaptor(trxContext, sqlQuery.ToString());
@@ -56,8 +60,8 @@ namespace Com.ZimVie.Wcs.ZWCS.Dao
             //create parameter
             DbParameterList sqlParameter = sqlCommandAdapter.CreateParameterList();
             sqlParameter.AddParameterString("warehouseCode", trxContext.UserData.FactoryCode);
-            sqlParameter.AddParameter("itemNumberList", inVo.ShippingNoticeLineItems);
-                       
+            sqlParameter.AddParameterInteger("shippingNoticeId", inVo.ShippingNoticeId);
+
             //execute SQL
             IDataReader dataReader = sqlCommandAdapter.ExecuteReader(trxContext, sqlParameter);
 
@@ -66,8 +70,10 @@ namespace Com.ZimVie.Wcs.ZWCS.Dao
             while (dataReader.Read())
             {
                 WorkOrderHeaderVo vo = new WorkOrderHeaderVo();
-                vo.AttachedDocumentControlNumber = ConvertDBNull<string>(dataReader, "attached_document_control_number");
-                vo.AttachedDocumentLocator = ConvertDBNull<string>(dataReader, "attached_document_locator");
+                vo.PurchaseOrderNumber = ConvertDBNull<string>(dataReader, "purchase_order_number");
+                vo.CommercialInvoiceNumber = ConvertDBNull<string>(dataReader, "commercial_invoice_number");
+                vo.PackingMaterial1 = ConvertDBNull<string>(dataReader, "packing_material_1");
+                vo.StandardWorkInstruction = ConvertDBNull<string>(dataReader, "standard_work_instruction");
                 outVo.add(vo);
             }
             dataReader.Close();

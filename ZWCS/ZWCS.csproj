@@ -146,7 +146,6 @@
     <Compile Include="Cbm\ShippingNotice\ValidateShippingNoticeTrackingNumberCbm.cs" />
     <Compile Include="Cbm\WorkOrderFileOutput\OutputMultipleWorkOrderFilesCbm.cs" />
     <Compile Include="Cbm\WorkOrderFileOutput\OutputWorkOrderFileCbm.cs" />
-    <Compile Include="Cbm\WorkOrder\AggregateShippingNoticeToWorkOrderPurchaseOrderCbm.cs" />
     <Compile Include="Cbm\WorkOrder\AggregateShippingNoticeToWorkOrderHeaderCbm.cs" />
     <Compile Include="Cbm\WorkOrder\AggregateShippingNoticeToWorkOrderLineCbm.cs" />
     <Compile Include="Cbm\WorkOrder\CreateShippingNoticeAndWorkOrderCbm.cs" />
@@ -168,7 +167,6 @@
     <Compile Include="Dao\ShippingNotice\CreateShippingNoticeHeaderDao.cs" />
     <Compile Include="Dao\Supplier\ReadSupplierDao.cs" />
     <Compile Include="Dao\ShippingNotice\ReadShippingNoticeTrackingNumberDao.cs" />
-    <Compile Include="Dao\WorkOrder\AggregateShippingNoticeToWorkOrderPurchaseOrderDao.cs" />
     <Compile Include="Dao\WorkOrder\AggregateShippingNoticeToWorkOrderLineDao.cs" />
     <Compile Include="Dao\WorkOrder\CreateWorkOrderPurchaseOrderDao.cs" />
     <Compile Include="Dao\WorkOrder\CreateWorkOrderHeaderDao.cs" />
@@ -331,62 +329,62 @@
   <ItemGroup>
     <PublishFile Include="log4net">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="log4net.xml">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.ReportViewer.Common">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.SqlServer.Types">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>

@@ -44,11 +44,9 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
         {
             WorkOrderHeaderCreationVo orderHeaderInVo = vo as WorkOrderHeaderCreationVo;
             int shippingNoticeId = orderHeaderInVo?.ShippingNoticeId ?? 0;
-            string shippingNoticeTrackingNumber = orderHeaderInVo.ShippingNoticeTrackingNumberr;
-            List<string> items = orderHeaderInVo?.ShippingNoticeLineItems;
+            string shippingNoticeTrackingNumber = orderHeaderInVo?.ShippingNoticeTrackingNumberr;
 
-
-            if (orderHeaderInVo == null || shippingNoticeId == 0 || items == null || items.Count <= 0)
+            if (orderHeaderInVo == null || shippingNoticeId == 0)
             {
                 var messageData = new MessageData("zwce00008", Properties.Resources.zwce00008, nameof(AggregateShippingNoticeToWorkOrderHeaderCbm));
                 logger.Error(messageData);

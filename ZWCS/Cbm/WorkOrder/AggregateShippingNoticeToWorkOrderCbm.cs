@@ -27,16 +27,11 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
         /// </summary>
         private readonly CbmController aggregateShippingNoticeToWorkOrderLineCbm = new AggregateShippingNoticeToWorkOrderLineCbm();
 
-        /// <summary>
-        /// Instantiate CBM to aggregate shipping notice into work order - purchase order relationships by attached document number
-        /// </summary>
-        private readonly CbmController aggregateShippingNoticeToWorkOrderPurchaseOrderCbm = new AggregateShippingNoticeToWorkOrderPurchaseOrderCbm();
 
         /// <summary>
         /// Create work order header and create work order lines by aggregating shipping notice
         /// 1. Aggregate shipping notice into work order header by attached document number
         /// 2. Aggregate shipping notice into work order line by item and lot number
-        /// 3. Aggregate shipping notice into work order - purchase order relationship by attached document number
         /// 4. Align work order header and line into hierarchical structure
         /// </summary>
         /// <param name="trxContext"></param>
@@ -57,11 +52,7 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
 
             // 1. Aggregate shipping notice into work order header by attached document number
-
-            List<string> items = noticeLines.Select(n => n.ItemNumber).Distinct().OrderBy(n => n).ToList();
-
             WorkOrderHeaderCreationVo workOrderInParams = new WorkOrderHeaderCreationVo();
-            workOrderInParams.ShippingNoticeLineItems = items;
             workOrderInParams.ShippingNoticeId = noticeHeader.ShippingNoticeId;
             workOrderInParams.ShippingNoticeTrackingNumberr = noticeHeader.ShippingNoticeTrackingNumber;
 
@@ -95,31 +86,20 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
             }
 
 
-            // 3. Aggregate shipping notice into work order - purchase order relationship by attached document number
-
-            ValueObjectList<WorkOrderHeaderVo> headerOutVoWithPo = aggregateShippingNoticeToWorkOrderPurchaseOrderCbm.Execute(trxContext, headerOutVo) as ValueObjectList<WorkOrderHeaderVo>;
-
-            List<WorkOrderHeaderVo> workOrderHeadersWithPo = headerOutVoWithPo?.GetList();
-
-            if (workOrderHeadersWithPo == null || workOrderHeadersWithPo.Count <= 0)
-            {
-                var messageData = new MessageData("zwce00019", Properties.Resources.zwce00019, nameof(aggregateShippingNoticeToWorkOrderPurchaseOrderCbm));
-                logger.Error(messageData);
-                throw new Framework.ApplicationException(messageData);
-            }
-
-
             // 4. Align work order header and line into hierarchical structure
 
             List<WorkOrderVo> workOrdersInHierarchy = new List<WorkOrderVo>();
 
-            foreach (WorkOrderHeaderVo header in workOrderHeadersWithPo)
+            List<Tuple<int, int>> workOrderIdSubNumberPairs = workOrderLines.
+                Select(l => new Tuple<int, int>(l.WorkOrderId, l.WorkOrderSubNumber)).Distinct().OrderBy(t => t).ToList();
+
+            foreach (Tuple<int, int> key in workOrderIdSubNumberPairs)
             {
                 WorkOrderVo order = new WorkOrderVo();
 
-                order.Header = header;
+                order.Header = workOrderHeaders.First(h => h.WorkOrderId == key.Item1);
 
-                List<WorkOrderLineVo> lines = workOrderLines.Where(l => l.WorkOrderId == header.WorkOrderId).ToList();
+                List<WorkOrderLineVo> lines = workOrderLines.Where(l => l.WorkOrderId == key.Item1 && l.WorkOrderSubNumber == key.Item2 ).ToList();
 
                 order.Lines = lines;
 
