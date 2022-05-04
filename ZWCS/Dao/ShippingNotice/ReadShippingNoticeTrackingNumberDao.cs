@@ -16,13 +16,9 @@ namespace Com.ZimVie.Wcs.ZWCS.Dao
             var sqlQuery = new StringBuilder();
             sqlQuery.Append("SELECT ");
             sqlQuery.Append(" sn.shipping_notice_tracking_number, ");
-            sqlQuery.Append(" sn.shipping_notice_issue_date, ");            
-            sqlQuery.Append(" sn.supplier_number, ");
-            sqlQuery.Append(" sp.supplier_name, ");
             sqlQuery.Append(" sn.registration_user_cd, ");
             sqlQuery.Append(" sn.registration_date_time ");            
             sqlQuery.Append("FROM t_shipping_notice sn ");
-            sqlQuery.Append(" LEFT JOIN m_supplier sp USING(supplier_number) ");
             sqlQuery.Append("WHERE sn.warehouse_cd = :warehouseCode ");
             sqlQuery.Append(" AND sn.shipping_notice_tracking_number = :trackingNumber ");
          
@@ -36,8 +32,20 @@ namespace Com.ZimVie.Wcs.ZWCS.Dao
 
             //execute SQL
 
-            var outVo = new ResultVo();
-            outVo.AffectedCount = sqlCommandAdapter.ExecuteNonQuery(sqlParameter);
+            //execute SQL
+            IDataReader dataReader = sqlCommandAdapter.ExecuteReader(trxContext, sqlParameter);
+
+            ShippingNoticeTrackingNumberVo outVo = null;
+
+
+            while (dataReader.Read())
+            {
+                outVo = new ShippingNoticeTrackingNumberVo();
+                outVo.ShippingNoticeTrackingNumber =  ConvertDBNull<string>(dataReader, "shipping_notice_tracking_number");
+                outVo.RegistrationUserCode = ConvertDBNull<string>(dataReader, "registration_user_cd");
+                outVo.RegistrationDateTime = ConvertDBNull<DateTime>(dataReader, "registration_date_time");
+            }
+            dataReader.Close();
 
             return outVo;
         }

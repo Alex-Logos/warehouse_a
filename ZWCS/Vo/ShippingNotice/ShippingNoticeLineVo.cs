@@ -6,7 +6,8 @@ namespace Com.ZimVie.Wcs.ZWCS.Vo
 {
     public class ShippingNoticeLineVo : ValueObject
     {
-        public int ShippingNoticeLineId { get; set; }
+
+        public int ShippingNoticeId { get; set; }
 
         public string PurchaseOrderNumber { get; set; }
 

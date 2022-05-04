@@ -121,7 +121,7 @@
     <value>出荷通知参照番号を入力して下さい。</value>
   </data>
   <data name="zwce00002" xml:space="preserve">
-    <value>出荷通知参照番号[{0}]は、既にユーザー[{1}]が[{2}]に登録を完了しています。仕入先は[{3}]です。</value>
+    <value>出荷通知参照番号[{0}]は、既にユーザー[{1}]が[{2}]に登録を完了しています。</value>
   </data>
   <data name="zwce00003" xml:space="preserve">
     <value>対象の出荷通知データを取り込んで下さい。</value>
@@ -338,5 +338,15 @@
   </data>
   <data name="zwce00057" xml:space="preserve">
     <value>出荷通知ファイルの形式が不正です。エクセルファイルを使用して下さい。</value>
+  </data>
+  <data name="zwce00058" xml:space="preserve">
+    <value>品目マスタレコードの取得に失敗しました。</value>
+  </data>
+  <data name="zwce00059" xml:space="preserve">
+    <value>品目マスタに該当のない品番が出荷通知エクセルファイルに含まれています：
+[{0}]</value>
+  </data>
+  <data name="zwce00060" xml:space="preserve">
+    <value>品目マスタを使用した品番の照合に失敗しました。</value>
   </data>
 </root>

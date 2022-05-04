@@ -70,7 +70,7 @@ namespace Com.ZimVie.Wcs.ZWCS.Properties {
         }
         
         /// <summary>
-        ///   出荷通知参照番号[{0}]は、既にユーザー[{1}]が[{2}]に登録を完了しています。仕入先は[{3}]です。 に類似しているローカライズされた文字列を検索します。
+        ///   出荷通知参照番号[{0}]は、既にユーザー[{1}]が[{2}]に登録を完了しています。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string zwce00002 {
             get {
@@ -594,6 +594,34 @@ namespace Com.ZimVie.Wcs.ZWCS.Properties {
         internal static string zwce00057 {
             get {
                 return ResourceManager.GetString("zwce00057", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   品目マスタレコードの取得に失敗しました。 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string zwce00058 {
+            get {
+                return ResourceManager.GetString("zwce00058", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   品目マスタに該当のない品番が出荷通知エクセルファイルに含まれています：
+        ///[{0}] に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string zwce00059 {
+            get {
+                return ResourceManager.GetString("zwce00059", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   品目マスタを使用した品番の照合に失敗しました。 に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string zwce00060 {
+            get {
+                return ResourceManager.GetString("zwce00060", resourceCulture);
             }
         }
         

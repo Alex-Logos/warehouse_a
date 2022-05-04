@@ -7,10 +7,6 @@ namespace Com.ZimVie.Wcs.ZWCS.Vo
     {
         public string ShippingNoticeTrackingNumber { get; set; }
 
-        public string SupplierNumber { get; set; }
-
-        public string SupplierName { get; set; }
-
         public string RegistrationUserCode { get; set; }
 
         public DateTime RegistrationDateTime { get; set; }

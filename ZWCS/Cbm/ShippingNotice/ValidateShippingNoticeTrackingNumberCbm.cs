@@ -41,13 +41,12 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
             if (outVo != null)
             {
-                var messageData = new MessageData("zwce00002", Properties.Resources.zwce00002, 
-                    outVo.ShippingNoticeTrackingNumber, 
-                    outVo.RegistrationUserCode, 
-                    outVo.RegistrationDateTime.ToString(UserData.GetUserData().DateTimeFormat),
-                    outVo.SupplierNumber + ": " + outVo.SupplierName);
+                var messageData = new MessageData("zwce00002", Properties.Resources.zwce00002,
+                    outVo.ShippingNoticeTrackingNumber,
+                    outVo.RegistrationUserCode,
+                    outVo.RegistrationDateTime.ToString(UserData.GetUserData().DateTimeFormat));
 
-                logger.Info(messageData);
+                logger.Error(messageData);
                 throw new Framework.ApplicationException(messageData);
             }
 

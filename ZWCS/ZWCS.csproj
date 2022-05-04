@@ -134,6 +134,7 @@
     <Compile Include="Cbm\ItemMasterSync\ReadKintoneUpdatedOrCreatedItemsCbm.cs" />
     <Compile Include="Cbm\ItemMasterSync\UpdateOrCreateZwcsItemsCbm.cs" />
     <Compile Include="Cbm\ItemMasterSync\SynchronizeItemMasterBetweenKintoneAndZwcsCbm.cs" />
+    <Compile Include="Cbm\ItemMasterSync\ValidateItemNumbersCbm.cs" />
     <Compile Include="Cbm\LabelPrint\ReadItemMasterLabelFieldsForSingleItemCbm.cs" />
     <Compile Include="Cbm\LabelPrint\GenerateLabelsFromWorkOrderLinesCbm.cs" />
     <Compile Include="Cbm\LabelPrint\PrintLabelsCbm.cs" />
@@ -151,7 +152,6 @@
     <Compile Include="Cbm\WorkOrder\CreateShippingNoticeAndWorkOrderCbm.cs" />
     <Compile Include="Cbm\WorkOrder\CreateWorkOrderCbm.cs" />
     <Compile Include="Cbm\WorkOrder\AggregateShippingNoticeToWorkOrderCbm.cs" />
-    <Compile Include="Cbm\WorkVarification\VarifyLotNumberBetweenWorkOrderAndActualGoodsCbm.cs" />
     <Compile Include="Cbm\WorkVarification\VarifyItemNumberBetweenWorkOrderAndActualGoodsCbm.cs" />
     <Compile Include="Cbm\WorkVarification\ReadItemNumberAndLotNumberFromProductLabelBarcodeCbm.cs" />
     <Compile Include="Common\ZwcsConfigurationDataTypeEnum.cs" />
@@ -172,6 +172,7 @@
     <Compile Include="Dao\WorkOrder\CreateWorkOrderHeaderDao.cs" />
     <Compile Include="Dao\WorkOrder\CreateWorkOrderLineDao.cs" />
     <Compile Include="Dao\WorkOrder\AggregateShippingNoticeToWorkOrderHeaderDao.cs" />
+    <Compile Include="Dao\ItemMasterSync\ReadItemMasterItemNumbersDao.cs" />
     <Compile Include="Dao\WorkOrder\ReadMaxWorkOrderNumberDao.cs" />
     <Compile Include="Dao\WorkVarification\ReadItemNumberAliasDao.cs" />
     <Compile Include="Dao\WorkVarification\ReadItemNumberByJanNumberDao.cs" />
@@ -330,62 +331,62 @@
   <ItemGroup>
     <PublishFile Include="log4net">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="log4net.xml">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.ReportViewer.Common">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.SqlServer.Types">
       <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>

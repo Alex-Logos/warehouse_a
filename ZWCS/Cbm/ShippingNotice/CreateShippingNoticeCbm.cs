@@ -10,6 +10,7 @@ using Com.ZimVie.Wcs.Framework;
 using Com.ZimVie.Wcs.ZWCS.Vo;
 using Com.ZimVie.Wcs.ZWCS.Dao;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Com.ZimVie.Wcs.ZWCS.Cbm
 {
@@ -22,6 +23,11 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
         /// Initialize logger
         /// </summary>
         private static readonly CommonLogger logger = CommonLogger.GetInstance(typeof(CreateShippingNoticeCbm));
+
+        /// <summary>
+        /// Instantiate CBM to validate shipping notice item numbers with item master
+        /// </summary>
+        private readonly CbmController validateItemNumbersCbm = new ValidateItemNumbersCbm();
 
         /// <summary>
         /// Initialize CBM to check duplicate of shipping notice traking number
@@ -49,10 +55,43 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
         {
             var inVo = vo as ShippingNoticeVo;
 
-            ShippingNoticeHeaderVo headerInVo = inVo.Header;
+
+            // Validate shipping notice item numbers with item master 
+
+            List<ShippingNoticeLineVo> lines = inVo?.Line;
+
+            if (lines == null || lines.Count == 0)
+            {
+                var messageData = new MessageData("", Properties.Resources.zwce00008, nameof(lines));
+                logger.Error(messageData);
+                throw new Framework.ApplicationException(messageData);
+            }
+
+            List<string> items = lines.Select(l => l.ItemNumber).Distinct().ToList();
+
+            ItemNumbersVo itemsInVo = new ItemNumbersVo();
+            itemsInVo.ItemNumbers = items;
+
+            var itemsResult = validateItemNumbersCbm.Execute(trxContext, itemsInVo) as BooleanValueObject;
+
+            if (!itemsResult.BooleanValue)
+            {
+                var messageData = new MessageData("zwce00060", Properties.Resources.zwce00060);
+                logger.Error(messageData);
+                throw new Framework.ApplicationException(messageData);
+            }
 
 
             // Check duplicate of shipping notice traking number
+
+            ShippingNoticeHeaderVo headerInVo = inVo?.Header;
+
+            if (headerInVo == null)
+            {
+                var messageData = new MessageData("", Properties.Resources.zwce00008, nameof(headerInVo));
+                logger.Error(messageData);
+                throw new Framework.ApplicationException(messageData);
+            }
 
             var checkInVo = new ShippingNoticeTrackingNumberVo();
             checkInVo.ShippingNoticeTrackingNumber = headerInVo.ShippingNoticeTrackingNumber;
@@ -83,9 +122,7 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
             headerInVo.ShippingNoticeId = headerOutVo.ResultId;
 
-            List<ShippingNoticeLineVo> lines = inVo.Line;
-            lines.ForEach(l => l.ShippingNoticeLineId = headerOutVo.ResultId);
-
+            lines.ForEach(l => l.ShippingNoticeId = headerOutVo.ResultId);
 
 
             // Create shipping notice line

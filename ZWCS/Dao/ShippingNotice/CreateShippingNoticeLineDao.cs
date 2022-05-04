@@ -80,7 +80,7 @@ namespace Com.ZimVie.Wcs.ZWCS.Dao
             foreach (ShippingNoticeLineVo line in lines)
             {
                 string index = lines.IndexOf(line).ToString();
-                sqlParameter.AddParameterInteger("shippingNoticeId" + index, line.ShippingNoticeLineId);
+                sqlParameter.AddParameterInteger("shippingNoticeId" + index, line.ShippingNoticeId);
                 sqlParameter.AddParameterString("purchaseOrderNumber" + index, line.PurchaseOrderNumber);
                 sqlParameter.AddParameterString("commercialInvoiceNumber" + index, line.InvoiceNumber);
                 sqlParameter.AddParameterString("itemNumber" + index, line.ItemNumber);
