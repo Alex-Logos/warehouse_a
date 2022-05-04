@@ -53,11 +53,11 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
             int productLabelSetCount = 0;
             int productLabelQuantityTotal = 0;
-            List<string> productLabelAttachedDocumentWorkOrders = new List<string>();
+            List<string> productLabelWorkOrders = new List<string>();
 
             int logisticsLabelSetCount = 0;
             int logisticsLabelQuantityTotal = 0;
-            List<string> logisticsLabelAttachedDocumentWorkOrders = new List<string>();
+            List<string> logisticsLabelWorkOrders = new List<string>();
 
             foreach (ValueObject label in labels)
             {
@@ -76,7 +76,7 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
                     productLabelSetCount++;
                     productLabelQuantityTotal += printResult.AffectedCount;
-                    productLabelAttachedDocumentWorkOrders.Add(productLabel.AttachedDocumentControlNumber + "-" + productLabel.WorkOrderNumber);
+                    productLabelWorkOrders.Add(productLabel.WorkOrderNumber);
                 }
                 else if (label is InternalLogisticsLabelVo)
                 {
@@ -93,17 +93,17 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
                     logisticsLabelSetCount++;
                     logisticsLabelQuantityTotal += printResult.AffectedCount;
-                    logisticsLabelAttachedDocumentWorkOrders.Add(logisticsLabel.AttachedDocumentControlNumber + "-" + logisticsLabel.WorkOrderNumber);
+                    logisticsLabelWorkOrders.Add(logisticsLabel.WorkOrderNumber);
                 }
             }
 
             PrintLabelsResultVo outVo = new PrintLabelsResultVo();
             outVo.ProductLabelSetCount = productLabelSetCount;
             outVo.ProductLabelQuantityTotal = productLabelQuantityTotal;
-            outVo.ProductLabelAttachedDocumentWorkOrders = productLabelAttachedDocumentWorkOrders.Distinct().ToList();
+            outVo.ProductLabelWorkOrders = productLabelWorkOrders.Distinct().ToList();
             outVo.InternalLogisticsLabelSetCount = logisticsLabelSetCount;
             outVo.InternalLogisticsLabelQuantityTotal = logisticsLabelQuantityTotal;
-            outVo.InternalLogisticsLabelAttachedDocumentWorkOrders = logisticsLabelAttachedDocumentWorkOrders.Distinct().ToList();
+            outVo.InternalLogisticsLabelWorkOrders = logisticsLabelWorkOrders.Distinct().ToList();
 
             return outVo;
 

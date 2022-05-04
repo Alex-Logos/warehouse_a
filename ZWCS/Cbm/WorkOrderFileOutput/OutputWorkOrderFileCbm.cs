@@ -50,7 +50,7 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
             // 1. Copy template excel file with new file name
 
-            string newFileNameForUser = headerValues.AttachedDocumentControlNumber + "-" + headerValues.WorkOrderNumber + ".xlsm";
+            string newFileNameForUser = GetWorkOrderNumberWithSubNumber(headerValues, lineValues);
 
             string newFileDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
@@ -83,7 +83,7 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
             // 4. Copy the line sheet to match the number of lines then set values for each sheet
 
-            List<_Worksheet> lineSheets = CopyLineSheetToMatchWorkOrderPageCount(ref newWorkBook, "P01", "P", lineValues.Max(l => l.PageWithinWorkOrder));
+            List<_Worksheet> lineSheets = CopyLineSheetToMatchWorkOrderPageCount(ref newWorkBook, "P01", "P", lineValues.Max(l => l.PageWithinWorkOrderSubNumber));
 
             SetLineSheetValues(ref lineSheets, headerValues, lineValues);
 
@@ -110,6 +110,28 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
 
         /// <summary>
+        /// Concatenate work order number and work order sub number
+        /// </summary>
+        /// <param name="headerValues"></param>
+        /// <param name="lineValues"></param>
+        /// <returns></returns>
+        private string GetWorkOrderNumberWithSubNumber(WorkOrderHeaderVo headerValues, List<WorkOrderLineVo> lineValues)
+        {
+            int workOrderSubNumber = lineValues.First().WorkOrderSubNumber;
+
+            if (workOrderSubNumber != 1)
+            {
+                return "WO" + headerValues.WorkOrderNumber + "-" + workOrderSubNumber.ToString() + ".xlsm";
+            }
+            else
+            {
+                return "WO" + headerValues.WorkOrderNumber + ".xlsm";
+            }
+        }
+
+
+
+        /// <summary>
         /// Set header sheet values
         /// </summary>
         /// <param name="headerSheet"></param>
@@ -117,11 +139,13 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
         /// <param name="lines"></param>
         private void SetHeaderSheetValues(ref _Worksheet headerSheet, WorkOrderHeaderVo header, List<WorkOrderLineVo> lines)
         {
-            headerSheet.get_Range("hAttachedDocumentNumberAndWorkOrderNumber").Value = header.AttachedDocumentControlNumber + "-" + header.WorkOrderNumber;
-
-            headerSheet.get_Range("hPurachaseOrderNumber").Value = string.Join(", ", header.PurchaseOrderNumbers);
+            headerSheet.get_Range("hWorkOrderNumber").Value = "WO" + header.WorkOrderNumber;
 
             headerSheet.get_Range("hShippingNoticeTrackingNumber").Value = header.ShippingNoticeTrackingNumber;
+
+            headerSheet.get_Range("hPurachaseOrderNumber").Value = string.Join(", ", header.PurchaseOrderNumber);
+
+            headerSheet.get_Range("hCommercialInvoiceNumber").Value = string.Join(", ", header.CommercialInvoiceNumber);
 
 
             List<string> productCategories = lines.Select(l => l.ProductCategory).Distinct().ToList();
@@ -131,19 +155,33 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
             headerSheet.get_Range("hWorkOrderLineCount").Value = lines.Count;
 
-            headerSheet.get_Range("hAttachedDocumentNumber").Value = header.AttachedDocumentControlNumber;
-
-            headerSheet.get_Range("hAttachedDocumentLocator").Value = header.AttachedDocumentLocator;
-
             headerSheet.get_Range("hWorkOrderProductQuantityTotal").Value = lines.Sum(l => l.LotQuantity);
 
 
-            List<string> standardInstructions = lines.Select(l => l.StandardWorkInstruction).Distinct().ToList();
+            if (!string.IsNullOrWhiteSpace(header.PackingMaterial1))
+            {
+                headerSheet.get_Range("hPackingMaterial1").Value = header.PackingMaterial1;
+
+                headerSheet.get_Range("hWorkOrderPackingMaterial1QuantityTotal").Value = lines.Sum(l => l.LotQuantity);
+            }
+
+
+            if (lines.Any(l => !string.IsNullOrWhiteSpace(l.PackingMaterial2)))
+            {
+                List<WorkOrderLineVo> targetLines = lines.Where(l => !string.IsNullOrWhiteSpace(l.PackingMaterial2)).ToList();
+
+                List<string> pakingMaterials2 = targetLines.Select(l => l.PackingMaterial2).Distinct().ToList();
+
+                headerSheet.get_Range("hPackingMaterial2").Value = string.Join(", ", pakingMaterials2);
+
+                headerSheet.get_Range("hWorkOrderPackingMaterial2QuantityTotal").Value = targetLines.Sum(l => l.LotQuantity);
+            }
+
 
             List<string> additionalInstructions = lines.Select(l => l.AdditionalWorkInstruction).Distinct().ToList();
 
             headerSheet.get_Range("hStandardAndAdditionalWorkInstruction").Value = 
-                string.Join(", ", standardInstructions) + Environment.NewLine + string.Join(", ", additionalInstructions);
+                header.StandardWorkInstruction + Environment.NewLine + string.Join(", ", additionalInstructions);
         }
 
 
@@ -191,7 +229,7 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
         {
             int sheetCount = lineSheets.Count;
 
-            int pageInOrder = linesInOrder.Max(l => l.PageWithinWorkOrder);
+            int pageInOrder = linesInOrder.Max(l => l.PageWithinWorkOrderSubNumber);
 
             if (sheetCount != pageInOrder)
             {
@@ -206,24 +244,22 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
                 int sheetIndex = lineSheets.IndexOf(sheet) + 1;
 
-                sheet.get_Range("dAttachedDocumentNumberAndWorkOrderNumber").Value = header.AttachedDocumentControlNumber + "-" + header.WorkOrderNumber;
+                string workOrderNumberWithSubNumber = GetWorkOrderNumberWithSubNumber(header, linesInOrder);
+
+                sheet.get_Range("dWorkOrderNumber").Value = workOrderNumberWithSubNumber; 
 
                 sheet.get_Range("dPageAndPageTotal").Value = "'" + sheetIndex.ToString() + "/" + sheetCount.ToString();
 
 
                 //Set values in line space
 
-                List<WorkOrderLineVo> linesInPage = linesInOrder.Where(l => l.PageWithinWorkOrder == sheetIndex).OrderBy(l => l.SerialWithinWorkOrder).ToList();
+                List<WorkOrderLineVo> linesInPage = linesInOrder.Where(l => l.PageWithinWorkOrderSubNumber == sheetIndex).OrderBy(l => l.SerialWithinWorkOrderSubNumber).ToList();
 
                 foreach (WorkOrderLineVo line in linesInPage)
                 {
                     string lineIndex = (linesInPage.IndexOf(line) + 1).ToString();
 
                     sheet.get_Range("d" + lineIndex + "ItemDescription").Value = line.ItemDescriptionJapanese;
-
-                    //bool supplierItemNumberExists = !string.IsNullOrWhiteSpace(line.SupplierItemNumber);
-
-                    //string itemNumber = supplierItemNumberExists ? "'" + line.ItemNumber + "\n" + line.SupplierItemNumber : "'" + line.ItemNumber;
 
                     sheet.get_Range("d" + lineIndex + "ItemNumber").Value = "'" + line.ItemNumber;
 
@@ -241,11 +277,11 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
                     sheet.get_Range("d" + lineIndex + "Quantity").Value = line.LotQuantity;
 
-                    sheet.get_Range("d" + lineIndex + "PackingMaterial1").Value = line.PackingMaterial1;
+                    sheet.get_Range("d" + lineIndex + "PackingMaterial1").Value = header.PackingMaterial1;
 
                     sheet.get_Range("d" + lineIndex + "PackingMaterial2").Value = line.PackingMaterial2;
 
-                    sheet.get_Range("d" + lineIndex + "StandardWorkInstruction").Value = line.StandardWorkInstruction;
+                    sheet.get_Range("d" + lineIndex + "StandardWorkInstruction").Value = header.StandardWorkInstruction;
 
                     sheet.get_Range("d" + lineIndex + "AdditionalWorkInstruction").Value = line.AdditionalWorkInstruction;
 
@@ -263,10 +299,13 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
                     sheet.get_Range("d" + lineIndex + "LotNumberBarcode").Value = "=CODE128(\"" + line.LotNumber + "\")";
 
-                    sheet.get_Range("d" + lineIndex + "SerialWithinWorkOrder").Value = "明細" + line.SerialWithinWorkOrder.ToString();
+                    sheet.get_Range("d" + lineIndex + "SerialWithinWorkOrderSubNumber").Value = "明細" + line.SerialWithinWorkOrderSubNumber.ToString();
+
+
+                    // Work varification form picks up work order number as 16 digits, thus it is padded with spaces as below
 
                     sheet.get_Range("d" + lineIndex + "WorkOrderNumberAndSerialAndProductQuantity").Value 
-                        = "=CODE128(\"" + header.AttachedDocumentControlNumber + "-" + header.WorkOrderNumber + line.SerialWithinWorkOrder.ToString("000") + line.LotQuantity.ToString("000000") + "\")";
+                        = "=CODE128(\"" + workOrderNumberWithSubNumber.PadRight(16) + line.SerialWithinWorkOrderSubNumber.ToString("000") + line.LotQuantity.ToString("000000") + "\")";
                 }
 
                 // Clear excel line areas not having corresponding values

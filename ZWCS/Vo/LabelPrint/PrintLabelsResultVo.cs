@@ -15,9 +15,9 @@ namespace Com.ZimVie.Wcs.ZWCS.Vo
 
         public int InternalLogisticsLabelQuantityTotal { get; set; }
 
-        public List<string> ProductLabelAttachedDocumentWorkOrders { get; set; }
+        public List<string> ProductLabelWorkOrders { get; set; }
 
-        public List<string> InternalLogisticsLabelAttachedDocumentWorkOrders { get; set; }
+        public List<string> InternalLogisticsLabelWorkOrders { get; set; }
 
     }
 }

@@ -9,8 +9,6 @@ namespace Com.ZimVie.Wcs.ZWCS.Vo
 
         // Label Header
 
-        public string AttachedDocumentControlNumber { get; set; }
-
         public string WorkOrderNumber { get; set; }
 
         public int SerialWithinWorkOrder { get; set; }

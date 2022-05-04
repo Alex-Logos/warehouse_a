@@ -117,8 +117,7 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
             ProductLabelVo label = new ProductLabelVo();
             
             label.WorkOrderNumber = orderIdNumberDictionary[line.WorkOrderId];
-            label.AttachedDocumentControlNumber = line.AttachedDocumentControlNumber;
-            label.SerialWithinWorkOrder = line.SerialWithinWorkOrder;
+            label.SerialWithinWorkOrder = line.SerialWithinWorkOrderSubNumber;
             label.LotNumber = line.LotNumber;
             label.ExpirationDate = line.LotExpirationDate;
             label.LabelQunaity = line.LotQuantity + 1;
@@ -156,7 +155,6 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
             InternalLogisticsLabelVo label = new InternalLogisticsLabelVo();
 
             label.WorkOrderNumber = orderIdNumberDictionary[line.WorkOrderId];
-            label.AttachedDocumentControlNumber = line.AttachedDocumentControlNumber;
             label.SerialWithinWorkOrder = line.SerialWithinWorkOrder;
 
             label.LotNumber = line.LotNumber;

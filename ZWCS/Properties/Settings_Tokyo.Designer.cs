@@ -49,8 +49,8 @@ namespace Com.ZimVie.Wcs.ZWCS.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=localhost;Port=5432;UserId=postgres;Password=postgres;Database=ZWCS_DEV2;C" +
-            "ommandTimeout=300;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server=localhost;Port=5432;UserId=postgres;Password=postgres;Database=ZWCS_2.0;Co" +
+            "mmandTimeout=300;")]
         public string CONNECTION_STRING {
             get {
                 return ((string)(this["CONNECTION_STRING"]));

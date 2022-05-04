@@ -320,8 +320,8 @@ namespace Com.ZimVie.Wcs.ZWCS
 
             // 6. Display label print result message to user 
 
-            List<string> productLabelWorkOrders = printResult?.ProductLabelAttachedDocumentWorkOrders;
-            List<string> logisticsLabelWorkOrders = printResult?.InternalLogisticsLabelAttachedDocumentWorkOrders;
+            List<string> productLabelWorkOrders = printResult?.ProductLabelWorkOrders;
+            List<string> logisticsLabelWorkOrders = printResult?.InternalLogisticsLabelWorkOrders;
 
             string productLabelOrderList = 
                 productLabelWorkOrders == null || productLabelWorkOrders.Count <= 0 ? "なし" : string.Join(Environment.NewLine, productLabelWorkOrders);
