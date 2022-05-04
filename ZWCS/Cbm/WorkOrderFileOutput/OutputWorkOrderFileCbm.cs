@@ -50,7 +50,7 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
             // 1. Copy template excel file with new file name
 
-            string newFileNameForUser = GetWorkOrderNumberWithSubNumber(headerValues, lineValues);
+            string newFileNameForUser = GetWorkOrderNumberWithSubNumber(headerValues, lineValues) + ".xlsm";
 
             string newFileDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
@@ -121,11 +121,11 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
             if (workOrderSubNumber != 1)
             {
-                return "WO" + headerValues.WorkOrderNumber + "-" + workOrderSubNumber.ToString() + ".xlsm";
+                return "WO" + headerValues.WorkOrderNumber + "-" + workOrderSubNumber.ToString();
             }
             else
             {
-                return "WO" + headerValues.WorkOrderNumber + ".xlsm";
+                return "WO" + headerValues.WorkOrderNumber;
             }
         }
 
@@ -139,7 +139,7 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
         /// <param name="lines"></param>
         private void SetHeaderSheetValues(ref _Worksheet headerSheet, WorkOrderHeaderVo header, List<WorkOrderLineVo> lines)
         {
-            headerSheet.get_Range("hWorkOrderNumber").Value = "WO" + header.WorkOrderNumber;
+            headerSheet.get_Range("hWorkOrderNumber").Value = GetWorkOrderNumberWithSubNumber(header, lines);
 
             headerSheet.get_Range("hShippingNoticeTrackingNumber").Value = header.ShippingNoticeTrackingNumber;
 
