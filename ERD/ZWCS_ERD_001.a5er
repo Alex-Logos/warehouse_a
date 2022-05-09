@@ -37,6 +37,7 @@ DefaultIndexName=%0:s_IX%1:d
 DefaultFkName=%0:s_FK%1:d
 SqlSeparator=0
 UpperCaseKeyword=0
+CreateOrder=Dependent
 ShowTag=1
 ShowCommonAttributes=0
 BugFixEntityWidth=0
@@ -158,11 +159,11 @@ Field="registration_user_cd","registration_user_cd","@VARCHAR(32)","NOT NULL",,"
 Field="registration_date_time","registration_date_time","timestamp","NOT NULL",,"","",$FFFFFFFF,""
 Field="warehouse_cd","warehouse_cd","@VARCHAR(8)","NOT NULL",,"","",$FFFFFFFF,""
 Index=t_work_order_uidx1=1,work_order_number
-Index=t_work_order_uidx2=1,shipping_notice_id,packing_material_1
+Index=t_work_order_uidx2=1,shipping_notice_id ,purchase_order_number ,commercial_invoice_number ,packing_material_1 ,standard_work_instruction 
 EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
-ModifiedDateTime=20220502183358
+ModifiedDateTime=20220504182625
 Position="MAIN",700,400,391,291
 ZOrder=-81
 
