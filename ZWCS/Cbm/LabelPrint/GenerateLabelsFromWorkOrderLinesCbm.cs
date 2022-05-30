@@ -74,7 +74,8 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
             // 2. Generate label value objects
 
-            Dictionary<int, string> orderIdNumberDictionary = workOrders.ToDictionary(w => w.Header.WorkOrderId, w => w.Header.WorkOrderNumber);
+            Dictionary<int, string> orderIdNumberDictionary = workOrders
+                .Select(w => new Tuple<int, string> (w.Header.WorkOrderId, w.Header.WorkOrderNumber)).Distinct().ToDictionary(t => t.Item1, t => t.Item2);
 
             ValueObjectList<ValueObject> labelsOutVo = new ValueObjectList<ValueObject>();
 
@@ -115,8 +116,8 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
             ItemMasterLabelFieldsVo master = itemLavelFieldsDictionary[line.ItemNumber];
 
             ProductLabelVo label = new ProductLabelVo();
-            
-            label.WorkOrderNumber = orderIdNumberDictionary[line.WorkOrderId];
+            string orderSuffix = line.WorkOrderSubNumber <= 1 ? string.Empty : "-" + line.WorkOrderSubNumber.ToString();
+            label.WorkOrderNumber = orderIdNumberDictionary[line.WorkOrderId] + orderSuffix;
             label.SerialWithinWorkOrder = line.SerialWithinWorkOrderSubNumber;
             label.LotNumber = line.LotNumber;
             label.ExpirationDate = line.LotExpirationDate;
@@ -153,8 +154,8 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
             ItemMasterLabelFieldsVo master = itemLavelFieldsDictionary[line.ItemNumber];
 
             InternalLogisticsLabelVo label = new InternalLogisticsLabelVo();
-
-            label.WorkOrderNumber = orderIdNumberDictionary[line.WorkOrderId];
+            string orderSuffix = line.WorkOrderSubNumber <= 1 ? string.Empty : "-" + line.WorkOrderSubNumber.ToString();
+            label.WorkOrderNumber = orderIdNumberDictionary[line.WorkOrderId] + orderSuffix;
             label.SerialWithinWorkOrder = line.SerialWithinWorkOrder;
 
             label.LotNumber = line.LotNumber;

@@ -24,7 +24,7 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
         private readonly int timeoutSeconds = 3;
 
-        private readonly string folderPath = Application.StartupPath;
+        private readonly string folderPath = Application.StartupPath + "\\" + "Common";
 
         private readonly string layoutFileName = "JptInternalLogisticsLabelLayout.mllayx";
 
