@@ -119,14 +119,7 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
         {
             int workOrderSubNumber = lineValues.First().WorkOrderSubNumber;
 
-            if (workOrderSubNumber != 1)
-            {
-                return "WO" + headerValues.WorkOrderNumber + "-" + workOrderSubNumber.ToString();
-            }
-            else
-            {
-                return "WO" + headerValues.WorkOrderNumber;
-            }
+            return "WO" + headerValues.WorkOrderNumber + "-" + workOrderSubNumber.ToString();
         }
 
 
