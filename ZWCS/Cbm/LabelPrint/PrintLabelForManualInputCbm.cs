@@ -101,7 +101,6 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
             label.LotNumber = userInput.LotNumber;
             label.ExpirationDate = userInput.ExpirationDate;
-            label.ProductQunaity = userInput.LabelQuantity;
             label.LabelQunaity = userInput.LabelQuantity;
 
             label.ProductCategory = master.ProductCategory;

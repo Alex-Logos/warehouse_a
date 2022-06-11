@@ -4,7 +4,7 @@
   <CreatorProductVersion>Multi LABELIST V5 Ver.5.9.7</CreatorProductVersion>
   <FileType>Layout</FileType>
   <FileVersion>30</FileVersion>
-  <DefaultPrinter />
+  <DefaultPrinter>SATO CL4NX-J Plus 609dpi Tokyo Medical Center</DefaultPrinter>
   <CodePageName>Shift_JIS</CodePageName>
   <FileInfoSettings>
     <Title />
@@ -1346,7 +1346,7 @@
         <IsSkipFirstLine>false</IsSkipFirstLine>
         <IsRemoveQuateMark>false</IsRemoveQuateMark>
         <QuateMark />
-        <HeaderItemCount>5</HeaderItemCount>
+        <HeaderItemCount>8</HeaderItemCount>
         <LineItemCount>1</LineItemCount>
         <LineCount>1</LineCount>
         <IsReadFieldEnd>false</IsReadFieldEnd>
@@ -1373,6 +1373,18 @@
               <FieldNumber>5</FieldNumber>
             </VariableFieldItem>
             <VariableFieldItem>
+              <ObjectID>00990a81-a526-4fb9-a1cb-7a263606e122</ObjectID>
+              <FieldNumber>6</FieldNumber>
+            </VariableFieldItem>
+            <VariableFieldItem>
+              <ObjectID>224af283-6073-4a12-bdc1-861ecbc4c4aa</ObjectID>
+              <FieldNumber>7</FieldNumber>
+            </VariableFieldItem>
+            <VariableFieldItem>
+              <ObjectID>b33ec751-9c31-416f-a406-698ebd90668e</ObjectID>
+              <FieldNumber>8</FieldNumber>
+            </VariableFieldItem>
+            <VariableFieldItem>
               <ObjectID>ConvertItem-Local-99999-0</ObjectID>
               <FieldNumber>1</FieldNumber>
             </VariableFieldItem>
@@ -1385,7 +1397,7 @@
       <FixedFileSettings>
         <EncodingName>shift_jis</EncodingName>
         <RecordSize>0</RecordSize>
-        <HeaderSize>128</HeaderSize>
+        <HeaderSize>145</HeaderSize>
         <LineSize>6</LineSize>
         <LineCount>1</LineCount>
         <IsRangeOverRead>false</IsRangeOverRead>
@@ -1415,6 +1427,21 @@
               <ObjectID>c417f61e-5c10-4406-b6bb-f9e60e59759f</ObjectID>
               <StartPos>105</StartPos>
               <EndPos>128</EndPos>
+            </FixedFieldItem>
+            <FixedFieldItem>
+              <ObjectID>00990a81-a526-4fb9-a1cb-7a263606e122</ObjectID>
+              <StartPos>129</StartPos>
+              <EndPos>141</EndPos>
+            </FixedFieldItem>
+            <FixedFieldItem>
+              <ObjectID>224af283-6073-4a12-bdc1-861ecbc4c4aa</ObjectID>
+              <StartPos>142</StartPos>
+              <EndPos>143</EndPos>
+            </FixedFieldItem>
+            <FixedFieldItem>
+              <ObjectID>b33ec751-9c31-416f-a406-698ebd90668e</ObjectID>
+              <StartPos>144</StartPos>
+              <EndPos>145</EndPos>
             </FixedFieldItem>
             <FixedFieldItem>
               <ObjectID>ConvertItem-Local-99999-0</ObjectID>
@@ -1598,7 +1625,7 @@
         <ToolTipContent />
         <CanDisplay>true</CanDisplay>
         <CanInput>true</CanInput>
-        <InputOrder>6</InputOrder>
+        <InputOrder>9</InputOrder>
         <CanTabStop>true</CanTabStop>
         <IsRow>true</IsRow>
         <IsPrintNumber>true</IsPrintNumber>
@@ -1640,7 +1667,7 @@
         <Width>526</Width>
         <Height>46</Height>
         <CanMouseOperation>true</CanMouseOperation>
-        <ZOrder>5</ZOrder>
+        <ZOrder>8</ZOrder>
         <IsNameDisplay>true</IsNameDisplay>
         <NameDisplayPos>Top</NameDisplayPos>
         <TableDisplaySettings>
@@ -1799,7 +1826,7 @@
         <Width>108</Width>
         <Height>46</Height>
         <CanMouseOperation>true</CanMouseOperation>
-        <ZOrder>4</ZOrder>
+        <ZOrder>7</ZOrder>
         <IsNameDisplay>true</IsNameDisplay>
         <NameDisplayPos>Top</NameDisplayPos>
         <TableDisplaySettings>
@@ -1958,7 +1985,7 @@
         <Width>173</Width>
         <Height>46</Height>
         <CanMouseOperation>true</CanMouseOperation>
-        <ZOrder>3</ZOrder>
+        <ZOrder>6</ZOrder>
         <IsNameDisplay>true</IsNameDisplay>
         <NameDisplayPos>Top</NameDisplayPos>
         <TableDisplaySettings>
@@ -2117,7 +2144,7 @@
         <Width>140</Width>
         <Height>46</Height>
         <CanMouseOperation>true</CanMouseOperation>
-        <ZOrder>2</ZOrder>
+        <ZOrder>5</ZOrder>
         <IsNameDisplay>true</IsNameDisplay>
         <NameDisplayPos>Top</NameDisplayPos>
         <TableDisplaySettings>
@@ -2276,7 +2303,7 @@
         <Width>205</Width>
         <Height>46</Height>
         <CanMouseOperation>true</CanMouseOperation>
-        <ZOrder>1</ZOrder>
+        <ZOrder>4</ZOrder>
         <IsNameDisplay>true</IsNameDisplay>
         <NameDisplayPos>Top</NameDisplayPos>
         <TableDisplaySettings>
@@ -2413,6 +2440,483 @@
         <EditDisplayX>405</EditDisplayX>
         <EditDisplayY>55</EditDisplayY>
         <EditDisplayWidth>205</EditDisplayWidth>
+        <EditDisplayHeight>28</EditDisplayHeight>
+        <ForeColor>
+          <A>255</A>
+          <R>0</R>
+          <G>0</G>
+          <B>0</B>
+        </ForeColor>
+        <BackColor>
+          <A>0</A>
+          <R>255</R>
+          <G>255</G>
+          <B>255</B>
+        </BackColor>
+      </Input>
+      <Input>
+        <ObjectID>00990a81-a526-4fb9-a1cb-7a263606e122</ObjectID>
+        <Name>work_order_number</Name>
+        <X>620</X>
+        <Y>55</Y>
+        <Width>122</Width>
+        <Height>46</Height>
+        <CanMouseOperation>true</CanMouseOperation>
+        <ZOrder>3</ZOrder>
+        <IsNameDisplay>true</IsNameDisplay>
+        <NameDisplayPos>Top</NameDisplayPos>
+        <TableDisplaySettings>
+          <IsTableDisplay>false</IsTableDisplay>
+          <TableReference>Local</TableReference>
+          <GlobalTableFile>C:\ZWCS2\ZWCS\ZWCS\Common\</GlobalTableFile>
+          <TableName />
+          <TableCell>A</TableCell>
+          <IsConverKey>false</IsConverKey>
+          <ConvertObjectID />
+          <IsAutoPopup>false</IsAutoPopup>
+          <PopUpLayoutSettings>
+            <PopUpHeight>0</PopUpHeight>
+            <PopUpWidth>0</PopUpWidth>
+            <Columns />
+          </PopUpLayoutSettings>
+        </TableDisplaySettings>
+        <EditDisplaySettings>
+          <IsEditDisplay>false</IsEditDisplay>
+          <IsFieldInsideDisplay>true</IsFieldInsideDisplay>
+          <DisplayPos>Right</DisplayPos>
+          <InputFontSettings>
+            <FontNameString>メイリオ</FontNameString>
+            <FontNameCaluture>ja-jp</FontNameCaluture>
+            <FontUIName>Meiryo</FontUIName>
+            <FontUINameCulture>en-us</FontUINameCulture>
+            <Weight>400</Weight>
+            <Style>Normal</Style>
+            <Stretch>5</Stretch>
+            <Win32FamilyName>メイリオ</Win32FamilyName>
+            <Win32FamilyNameCulture>ja-JP</Win32FamilyNameCulture>
+            <Win32FamilyUIName>Meiryo</Win32FamilyUIName>
+            <Win32FamilyUINameCulture>en-US</Win32FamilyUINameCulture>
+            <FontSize>9</FontSize>
+            <IsBold>false</IsBold>
+            <IsItalic>false</IsItalic>
+            <IsUnderLine>false</IsUnderLine>
+            <IsStrikethrough>false</IsStrikethrough>
+            <IsVertical>false</IsVertical>
+          </InputFontSettings>
+          <EditType>Price</EditType>
+          <PriceSettings>
+            <TaxEditSettings>
+              <IsEnabled>false</IsEnabled>
+              <Type>Included</Type>
+              <RoundType>RoundDown</RoundType>
+              <RoundPoint>OnePlaceOfDecimals</RoundPoint>
+              <IsFixed>false</IsFixed>
+              <TaxSelectionType>User</TaxSelectionType>
+              <TaxSelectionNumber>0</TaxSelectionNumber>
+              <TaxRate>0</TaxRate>
+              <TaxVariableReference xsi:nil="true" />
+            </TaxEditSettings>
+            <ZeroFilling>false</ZeroFilling>
+            <SpaceFilling>false</SpaceFilling>
+            <PriceSymbolSettings>
+              <IsEnabled>false</IsEnabled>
+              <PriceSymbolType>SingleByte</PriceSymbolType>
+              <PriceSymbol>\</PriceSymbol>
+              <IsZeroToEmpty>false</IsZeroToEmpty>
+            </PriceSymbolSettings>
+            <CommaEdit>None</CommaEdit>
+            <Alignment>None</Alignment>
+          </PriceSettings>
+        </EditDisplaySettings>
+        <InputCheckSettings>
+          <IsInputCheck>false</IsInputCheck>
+          <InputTypeCheck>None</InputTypeCheck>
+          <IsInputRequired>false</IsInputRequired>
+          <IsCompletion>false</IsCompletion>
+          <OtherCheckType>None</OtherCheckType>
+        </InputCheckSettings>
+        <IsInputLengthLimit>false</IsInputLengthLimit>
+        <InputLength>13</InputLength>
+        <InputMaxLength>13</InputMaxLength>
+        <VariableLength>13</VariableLength>
+        <IsUsingPrintNumberSettings>false</IsUsingPrintNumberSettings>
+        <InputFontSettings>
+          <FontNameString>メイリオ</FontNameString>
+          <FontNameCaluture>ja-jp</FontNameCaluture>
+          <FontUIName>Meiryo</FontUIName>
+          <FontUINameCulture>en-us</FontUINameCulture>
+          <Weight>400</Weight>
+          <Style>Normal</Style>
+          <Stretch>5</Stretch>
+          <Win32FamilyName>メイリオ</Win32FamilyName>
+          <Win32FamilyNameCulture>ja-JP</Win32FamilyNameCulture>
+          <Win32FamilyUIName>Meiryo</Win32FamilyUIName>
+          <Win32FamilyUINameCulture>en-US</Win32FamilyUINameCulture>
+          <FontSize>9</FontSize>
+          <IsBold>false</IsBold>
+          <IsItalic>false</IsItalic>
+          <IsUnderLine>false</IsUnderLine>
+          <IsStrikethrough>false</IsStrikethrough>
+          <IsVertical>false</IsVertical>
+        </InputFontSettings>
+        <InitialValueSettings>
+          <InitialValue />
+          <BaseDate>Base</BaseDate>
+          <DateOffset>
+            <InputPastOrFuture>Future</InputPastOrFuture>
+            <Year>0</Year>
+            <Month>0</Month>
+            <Day>0</Day>
+          </DateOffset>
+        </InitialValueSettings>
+        <IsClearAfterPrint>false</IsClearAfterPrint>
+        <IsHistorySave>true</IsHistorySave>
+        <IsIMEStart>false</IsIMEStart>
+        <IsSortingCutHeaderTailKey>false</IsSortingCutHeaderTailKey>
+        <HasInputGuid>false</HasInputGuid>
+        <InputGuidContent />
+        <HasToolTip>false</HasToolTip>
+        <ToolTipContent />
+        <CanDisplay>true</CanDisplay>
+        <CanInput>true</CanInput>
+        <InputOrder>6</InputOrder>
+        <CanTabStop>true</CanTabStop>
+        <IsRow>false</IsRow>
+        <IsPrintNumber>false</IsPrintNumber>
+        <VariableReference>Global</VariableReference>
+        <VariableNumber>
+          <Number>1</Number>
+          <Child>0</Child>
+        </VariableNumber>
+        <NameX>620</NameX>
+        <NameY>55</NameY>
+        <NameWidth>122</NameWidth>
+        <NameHeight>18</NameHeight>
+        <InputX>620</InputX>
+        <InputY>73</InputY>
+        <InputWidth>116</InputWidth>
+        <InputHeight>28</InputHeight>
+        <EditDisplayX>620</EditDisplayX>
+        <EditDisplayY>55</EditDisplayY>
+        <EditDisplayWidth>116</EditDisplayWidth>
+        <EditDisplayHeight>28</EditDisplayHeight>
+        <ForeColor>
+          <A>255</A>
+          <R>0</R>
+          <G>0</G>
+          <B>0</B>
+        </ForeColor>
+        <BackColor>
+          <A>0</A>
+          <R>255</R>
+          <G>255</G>
+          <B>255</B>
+        </BackColor>
+      </Input>
+      <Input>
+        <ObjectID>224af283-6073-4a12-bdc1-861ecbc4c4aa</ObjectID>
+        <Name>line_number_within_work_order</Name>
+        <X>752</X>
+        <Y>55</Y>
+        <Width>192</Width>
+        <Height>46</Height>
+        <CanMouseOperation>true</CanMouseOperation>
+        <ZOrder>2</ZOrder>
+        <IsNameDisplay>true</IsNameDisplay>
+        <NameDisplayPos>Top</NameDisplayPos>
+        <TableDisplaySettings>
+          <IsTableDisplay>false</IsTableDisplay>
+          <TableReference>Local</TableReference>
+          <GlobalTableFile>C:\ZWCS2\ZWCS\ZWCS\Common\</GlobalTableFile>
+          <TableName />
+          <TableCell>A</TableCell>
+          <IsConverKey>false</IsConverKey>
+          <ConvertObjectID />
+          <IsAutoPopup>false</IsAutoPopup>
+          <PopUpLayoutSettings>
+            <PopUpHeight>0</PopUpHeight>
+            <PopUpWidth>0</PopUpWidth>
+            <Columns />
+          </PopUpLayoutSettings>
+        </TableDisplaySettings>
+        <EditDisplaySettings>
+          <IsEditDisplay>false</IsEditDisplay>
+          <IsFieldInsideDisplay>true</IsFieldInsideDisplay>
+          <DisplayPos>Right</DisplayPos>
+          <InputFontSettings>
+            <FontNameString>メイリオ</FontNameString>
+            <FontNameCaluture>ja-jp</FontNameCaluture>
+            <FontUIName>Meiryo</FontUIName>
+            <FontUINameCulture>en-us</FontUINameCulture>
+            <Weight>400</Weight>
+            <Style>Normal</Style>
+            <Stretch>5</Stretch>
+            <Win32FamilyName>メイリオ</Win32FamilyName>
+            <Win32FamilyNameCulture>ja-JP</Win32FamilyNameCulture>
+            <Win32FamilyUIName>Meiryo</Win32FamilyUIName>
+            <Win32FamilyUINameCulture>en-US</Win32FamilyUINameCulture>
+            <FontSize>9</FontSize>
+            <IsBold>false</IsBold>
+            <IsItalic>false</IsItalic>
+            <IsUnderLine>false</IsUnderLine>
+            <IsStrikethrough>false</IsStrikethrough>
+            <IsVertical>false</IsVertical>
+          </InputFontSettings>
+          <EditType>Price</EditType>
+          <PriceSettings>
+            <TaxEditSettings>
+              <IsEnabled>false</IsEnabled>
+              <Type>Included</Type>
+              <RoundType>RoundDown</RoundType>
+              <RoundPoint>OnePlaceOfDecimals</RoundPoint>
+              <IsFixed>false</IsFixed>
+              <TaxSelectionType>User</TaxSelectionType>
+              <TaxSelectionNumber>0</TaxSelectionNumber>
+              <TaxRate>0</TaxRate>
+              <TaxVariableReference xsi:nil="true" />
+            </TaxEditSettings>
+            <ZeroFilling>false</ZeroFilling>
+            <SpaceFilling>false</SpaceFilling>
+            <PriceSymbolSettings>
+              <IsEnabled>false</IsEnabled>
+              <PriceSymbolType>SingleByte</PriceSymbolType>
+              <PriceSymbol>\</PriceSymbol>
+              <IsZeroToEmpty>false</IsZeroToEmpty>
+            </PriceSymbolSettings>
+            <CommaEdit>None</CommaEdit>
+            <Alignment>None</Alignment>
+          </PriceSettings>
+        </EditDisplaySettings>
+        <InputCheckSettings>
+          <IsInputCheck>false</IsInputCheck>
+          <InputTypeCheck>None</InputTypeCheck>
+          <IsInputRequired>false</IsInputRequired>
+          <IsCompletion>false</IsCompletion>
+          <OtherCheckType>None</OtherCheckType>
+        </InputCheckSettings>
+        <IsInputLengthLimit>false</IsInputLengthLimit>
+        <InputLength>2</InputLength>
+        <InputMaxLength>2</InputMaxLength>
+        <VariableLength>2</VariableLength>
+        <IsUsingPrintNumberSettings>false</IsUsingPrintNumberSettings>
+        <InputFontSettings>
+          <FontNameString>メイリオ</FontNameString>
+          <FontNameCaluture>ja-jp</FontNameCaluture>
+          <FontUIName>Meiryo</FontUIName>
+          <FontUINameCulture>en-us</FontUINameCulture>
+          <Weight>400</Weight>
+          <Style>Normal</Style>
+          <Stretch>5</Stretch>
+          <Win32FamilyName>メイリオ</Win32FamilyName>
+          <Win32FamilyNameCulture>ja-JP</Win32FamilyNameCulture>
+          <Win32FamilyUIName>Meiryo</Win32FamilyUIName>
+          <Win32FamilyUINameCulture>en-US</Win32FamilyUINameCulture>
+          <FontSize>9</FontSize>
+          <IsBold>false</IsBold>
+          <IsItalic>false</IsItalic>
+          <IsUnderLine>false</IsUnderLine>
+          <IsStrikethrough>false</IsStrikethrough>
+          <IsVertical>false</IsVertical>
+        </InputFontSettings>
+        <InitialValueSettings>
+          <InitialValue />
+          <BaseDate>Base</BaseDate>
+          <DateOffset>
+            <InputPastOrFuture>Future</InputPastOrFuture>
+            <Year>0</Year>
+            <Month>0</Month>
+            <Day>0</Day>
+          </DateOffset>
+        </InitialValueSettings>
+        <IsClearAfterPrint>false</IsClearAfterPrint>
+        <IsHistorySave>true</IsHistorySave>
+        <IsIMEStart>false</IsIMEStart>
+        <IsSortingCutHeaderTailKey>false</IsSortingCutHeaderTailKey>
+        <HasInputGuid>false</HasInputGuid>
+        <InputGuidContent />
+        <HasToolTip>false</HasToolTip>
+        <ToolTipContent />
+        <CanDisplay>true</CanDisplay>
+        <CanInput>true</CanInput>
+        <InputOrder>7</InputOrder>
+        <CanTabStop>true</CanTabStop>
+        <IsRow>false</IsRow>
+        <IsPrintNumber>false</IsPrintNumber>
+        <VariableReference>Global</VariableReference>
+        <VariableNumber>
+          <Number>2</Number>
+          <Child>0</Child>
+        </VariableNumber>
+        <NameX>752</NameX>
+        <NameY>55</NameY>
+        <NameWidth>192</NameWidth>
+        <NameHeight>18</NameHeight>
+        <InputX>752</InputX>
+        <InputY>73</InputY>
+        <InputWidth>28</InputWidth>
+        <InputHeight>28</InputHeight>
+        <EditDisplayX>752</EditDisplayX>
+        <EditDisplayY>55</EditDisplayY>
+        <EditDisplayWidth>28</EditDisplayWidth>
+        <EditDisplayHeight>28</EditDisplayHeight>
+        <ForeColor>
+          <A>255</A>
+          <R>0</R>
+          <G>0</G>
+          <B>0</B>
+        </ForeColor>
+        <BackColor>
+          <A>0</A>
+          <R>255</R>
+          <G>255</G>
+          <B>255</B>
+        </BackColor>
+      </Input>
+      <Input>
+        <ObjectID>b33ec751-9c31-416f-a406-698ebd90668e</ObjectID>
+        <Name>line_count_for_work_order</Name>
+        <X>954</X>
+        <Y>55</Y>
+        <Width>160</Width>
+        <Height>46</Height>
+        <CanMouseOperation>true</CanMouseOperation>
+        <ZOrder>1</ZOrder>
+        <IsNameDisplay>true</IsNameDisplay>
+        <NameDisplayPos>Top</NameDisplayPos>
+        <TableDisplaySettings>
+          <IsTableDisplay>false</IsTableDisplay>
+          <TableReference>Local</TableReference>
+          <GlobalTableFile>C:\ZWCS2\ZWCS\ZWCS\Common\</GlobalTableFile>
+          <TableName />
+          <TableCell>A</TableCell>
+          <IsConverKey>false</IsConverKey>
+          <ConvertObjectID />
+          <IsAutoPopup>false</IsAutoPopup>
+          <PopUpLayoutSettings>
+            <PopUpHeight>0</PopUpHeight>
+            <PopUpWidth>0</PopUpWidth>
+            <Columns />
+          </PopUpLayoutSettings>
+        </TableDisplaySettings>
+        <EditDisplaySettings>
+          <IsEditDisplay>false</IsEditDisplay>
+          <IsFieldInsideDisplay>true</IsFieldInsideDisplay>
+          <DisplayPos>Right</DisplayPos>
+          <InputFontSettings>
+            <FontNameString>メイリオ</FontNameString>
+            <FontNameCaluture>ja-jp</FontNameCaluture>
+            <FontUIName>Meiryo</FontUIName>
+            <FontUINameCulture>en-us</FontUINameCulture>
+            <Weight>400</Weight>
+            <Style>Normal</Style>
+            <Stretch>5</Stretch>
+            <Win32FamilyName>メイリオ</Win32FamilyName>
+            <Win32FamilyNameCulture>ja-JP</Win32FamilyNameCulture>
+            <Win32FamilyUIName>Meiryo</Win32FamilyUIName>
+            <Win32FamilyUINameCulture>en-US</Win32FamilyUINameCulture>
+            <FontSize>9</FontSize>
+            <IsBold>false</IsBold>
+            <IsItalic>false</IsItalic>
+            <IsUnderLine>false</IsUnderLine>
+            <IsStrikethrough>false</IsStrikethrough>
+            <IsVertical>false</IsVertical>
+          </InputFontSettings>
+          <EditType>Price</EditType>
+          <PriceSettings>
+            <TaxEditSettings>
+              <IsEnabled>false</IsEnabled>
+              <Type>Included</Type>
+              <RoundType>RoundDown</RoundType>
+              <RoundPoint>OnePlaceOfDecimals</RoundPoint>
+              <IsFixed>false</IsFixed>
+              <TaxSelectionType>User</TaxSelectionType>
+              <TaxSelectionNumber>0</TaxSelectionNumber>
+              <TaxRate>0</TaxRate>
+              <TaxVariableReference xsi:nil="true" />
+            </TaxEditSettings>
+            <ZeroFilling>false</ZeroFilling>
+            <SpaceFilling>false</SpaceFilling>
+            <PriceSymbolSettings>
+              <IsEnabled>false</IsEnabled>
+              <PriceSymbolType>SingleByte</PriceSymbolType>
+              <PriceSymbol>\</PriceSymbol>
+              <IsZeroToEmpty>false</IsZeroToEmpty>
+            </PriceSymbolSettings>
+            <CommaEdit>None</CommaEdit>
+            <Alignment>None</Alignment>
+          </PriceSettings>
+        </EditDisplaySettings>
+        <InputCheckSettings>
+          <IsInputCheck>false</IsInputCheck>
+          <InputTypeCheck>None</InputTypeCheck>
+          <IsInputRequired>false</IsInputRequired>
+          <IsCompletion>false</IsCompletion>
+          <OtherCheckType>None</OtherCheckType>
+        </InputCheckSettings>
+        <IsInputLengthLimit>false</IsInputLengthLimit>
+        <InputLength>2</InputLength>
+        <InputMaxLength>2</InputMaxLength>
+        <VariableLength>2</VariableLength>
+        <IsUsingPrintNumberSettings>false</IsUsingPrintNumberSettings>
+        <InputFontSettings>
+          <FontNameString>メイリオ</FontNameString>
+          <FontNameCaluture>ja-jp</FontNameCaluture>
+          <FontUIName>Meiryo</FontUIName>
+          <FontUINameCulture>en-us</FontUINameCulture>
+          <Weight>400</Weight>
+          <Style>Normal</Style>
+          <Stretch>5</Stretch>
+          <Win32FamilyName>メイリオ</Win32FamilyName>
+          <Win32FamilyNameCulture>ja-JP</Win32FamilyNameCulture>
+          <Win32FamilyUIName>Meiryo</Win32FamilyUIName>
+          <Win32FamilyUINameCulture>en-US</Win32FamilyUINameCulture>
+          <FontSize>9</FontSize>
+          <IsBold>false</IsBold>
+          <IsItalic>false</IsItalic>
+          <IsUnderLine>false</IsUnderLine>
+          <IsStrikethrough>false</IsStrikethrough>
+          <IsVertical>false</IsVertical>
+        </InputFontSettings>
+        <InitialValueSettings>
+          <InitialValue />
+          <BaseDate>Base</BaseDate>
+          <DateOffset>
+            <InputPastOrFuture>Future</InputPastOrFuture>
+            <Year>0</Year>
+            <Month>0</Month>
+            <Day>0</Day>
+          </DateOffset>
+        </InitialValueSettings>
+        <IsClearAfterPrint>false</IsClearAfterPrint>
+        <IsHistorySave>true</IsHistorySave>
+        <IsIMEStart>false</IsIMEStart>
+        <IsSortingCutHeaderTailKey>false</IsSortingCutHeaderTailKey>
+        <HasInputGuid>false</HasInputGuid>
+        <InputGuidContent />
+        <HasToolTip>false</HasToolTip>
+        <ToolTipContent />
+        <CanDisplay>true</CanDisplay>
+        <CanInput>true</CanInput>
+        <InputOrder>8</InputOrder>
+        <CanTabStop>true</CanTabStop>
+        <IsRow>false</IsRow>
+        <IsPrintNumber>false</IsPrintNumber>
+        <VariableReference>Global</VariableReference>
+        <VariableNumber>
+          <Number>3</Number>
+          <Child>0</Child>
+        </VariableNumber>
+        <NameX>954</NameX>
+        <NameY>55</NameY>
+        <NameWidth>160</NameWidth>
+        <NameHeight>18</NameHeight>
+        <InputX>954</InputX>
+        <InputY>73</InputY>
+        <InputWidth>28</InputWidth>
+        <InputHeight>28</InputHeight>
+        <EditDisplayX>954</EditDisplayX>
+        <EditDisplayY>55</EditDisplayY>
+        <EditDisplayWidth>28</EditDisplayWidth>
         <EditDisplayHeight>28</EditDisplayHeight>
         <ForeColor>
           <A>255</A>
@@ -3316,6 +3820,54 @@
       <IsAutoSave>false</IsAutoSave>
     </Create>
     <Logs>
+      <UpdateHistoryItem>
+        <UpdateTime>2022-06-11T12:47:11.6280984+09:00</UpdateTime>
+        <Title />
+        <Comment />
+        <UserName>fujiit</UserName>
+        <ComputerName>DESKTOP-0SPRQ2H</ComputerName>
+        <OS>Microsoft Windows 10 Pro </OS>
+        <OSVersion>Microsoft Windows NT 6.2.9200.0</OSVersion>
+        <ApplicationName>MLDesign</ApplicationName>
+        <ApplicationEdition>Standard</ApplicationEdition>
+        <ApplicationVersion>5.9.9.0</ApplicationVersion>
+        <OperationMode>Advance</OperationMode>
+        <IsTrial>false</IsTrial>
+        <IsCompact>false</IsCompact>
+        <IsAutoSave>false</IsAutoSave>
+      </UpdateHistoryItem>
+      <UpdateHistoryItem>
+        <UpdateTime>2022-06-11T12:47:10.6710682+09:00</UpdateTime>
+        <Title />
+        <Comment />
+        <UserName>fujiit</UserName>
+        <ComputerName>DESKTOP-0SPRQ2H</ComputerName>
+        <OS>Microsoft Windows 10 Pro </OS>
+        <OSVersion>Microsoft Windows NT 6.2.9200.0</OSVersion>
+        <ApplicationName>MLDesign</ApplicationName>
+        <ApplicationEdition>Standard</ApplicationEdition>
+        <ApplicationVersion>5.9.9.0</ApplicationVersion>
+        <OperationMode>Advance</OperationMode>
+        <IsTrial>false</IsTrial>
+        <IsCompact>false</IsCompact>
+        <IsAutoSave>false</IsAutoSave>
+      </UpdateHistoryItem>
+      <UpdateHistoryItem>
+        <UpdateTime>2022-06-11T12:42:50.2097505+09:00</UpdateTime>
+        <Title />
+        <Comment />
+        <UserName>fujiit</UserName>
+        <ComputerName>DESKTOP-0SPRQ2H</ComputerName>
+        <OS>Microsoft Windows 10 Pro </OS>
+        <OSVersion>Microsoft Windows NT 6.2.9200.0</OSVersion>
+        <ApplicationName>MLDesign</ApplicationName>
+        <ApplicationEdition>Standard</ApplicationEdition>
+        <ApplicationVersion>5.9.9.0</ApplicationVersion>
+        <OperationMode>Advance</OperationMode>
+        <IsTrial>false</IsTrial>
+        <IsCompact>false</IsCompact>
+        <IsAutoSave>false</IsAutoSave>
+      </UpdateHistoryItem>
       <UpdateHistoryItem>
         <UpdateTime>2021-11-09T15:01:21.0764239+09:00</UpdateTime>
         <Title />

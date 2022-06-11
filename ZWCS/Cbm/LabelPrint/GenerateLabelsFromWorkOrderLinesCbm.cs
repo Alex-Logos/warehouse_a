@@ -81,6 +81,9 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
             foreach (WorkOrderLineVo line in workOrderLines)
             {
+
+                int serialCount = GetSerialCount(line, workOrderLines);
+
                 ValueObject label = null;
                
                 switch (line.LabelType)
@@ -88,10 +91,10 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
                     case 0:
                         continue;
                     case 1:
-                        label = GenerateProductLabel(line, itemLavelFieldsDictionary, orderIdNumberDictionary);
+                        label = GenerateProductLabel(line, itemLavelFieldsDictionary, orderIdNumberDictionary, serialCount);
                         break;
                     case 2:
-                        label = GenerateInternalLogisticsLabel(line, itemLavelFieldsDictionary, orderIdNumberDictionary);
+                        label = GenerateInternalLogisticsLabel(line, itemLavelFieldsDictionary, orderIdNumberDictionary, serialCount);
                         break;
                     default:
                         var messageData = new MessageData("zwce00026", Properties.Resources.zwce00026, nameof(line.LabelType), line.LabelType.ToString());
@@ -106,19 +109,40 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
 
         }
 
+
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="line"></param>
+        /// <param name="workOrderLines"></param>
+        /// <returns></returns>
+        private int GetSerialCount(WorkOrderLineVo line, List<WorkOrderLineVo> workOrderLines)
+        {
+            int serialCount = workOrderLines
+                .Where(l => l.WorkOrderId == line.WorkOrderId && l.WorkOrderSubNumber == line.WorkOrderSubNumber)
+                .Max(l => l.SerialWithinWorkOrderSubNumber);
+
+            return serialCount;
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="line"></param>
+        /// <param name="itemLavelFieldsDictionary"></param>
+        /// <param name="orderIdNumberDictionary"></param>
+        /// <param name="serialCount"></param>
         /// <returns></returns>
         private ProductLabelVo GenerateProductLabel(WorkOrderLineVo line, 
-            Dictionary<string, ItemMasterLabelFieldsVo> itemLavelFieldsDictionary, Dictionary<int, string> orderIdNumberDictionary)
+            Dictionary<string, ItemMasterLabelFieldsVo> itemLavelFieldsDictionary, Dictionary<int, string> orderIdNumberDictionary, int serialCount)
         {
             ItemMasterLabelFieldsVo master = itemLavelFieldsDictionary[line.ItemNumber];
 
             ProductLabelVo label = new ProductLabelVo();
-            string orderSuffix = line.WorkOrderSubNumber <= 1 ? string.Empty : "-" + line.WorkOrderSubNumber.ToString();
-            label.WorkOrderNumber = orderIdNumberDictionary[line.WorkOrderId] + orderSuffix;
+            label.WorkOrderNumber = orderIdNumberDictionary[line.WorkOrderId] + "-" + line.WorkOrderSubNumber.ToString();
             label.SerialWithinWorkOrder = line.SerialWithinWorkOrderSubNumber;
+            label.SerialCount = serialCount;
             label.LotNumber = line.LotNumber;
             label.ExpirationDate = line.LotExpirationDate;
             label.LabelQunaity = line.LotQuantity + 1;
@@ -149,14 +173,14 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
         /// </summary>
         /// <returns></returns>
         private InternalLogisticsLabelVo GenerateInternalLogisticsLabel(WorkOrderLineVo line, 
-            Dictionary<string, ItemMasterLabelFieldsVo> itemLavelFieldsDictionary, Dictionary<int, string> orderIdNumberDictionary)
+            Dictionary<string, ItemMasterLabelFieldsVo> itemLavelFieldsDictionary, Dictionary<int, string> orderIdNumberDictionary, int serialCount)
         {
             ItemMasterLabelFieldsVo master = itemLavelFieldsDictionary[line.ItemNumber];
 
             InternalLogisticsLabelVo label = new InternalLogisticsLabelVo();
-            string orderSuffix = line.WorkOrderSubNumber <= 1 ? string.Empty : "-" + line.WorkOrderSubNumber.ToString();
-            label.WorkOrderNumber = orderIdNumberDictionary[line.WorkOrderId] + orderSuffix;
+            label.WorkOrderNumber = orderIdNumberDictionary[line.WorkOrderId] + "-" + line.WorkOrderSubNumber.ToString();
             label.SerialWithinWorkOrder = line.SerialWithinWorkOrder;
+            label.SerialCount = serialCount;
 
             label.LotNumber = line.LotNumber;
             label.ExpirationDate = line.LotExpirationDate;

@@ -18,8 +18,6 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
         /// </summary>
         private static readonly CommonLogger logger = CommonLogger.GetInstance(typeof(PrintProductLabelCbm));
 
-        //private readonly string protcolAndPrinterName = "DRV:SATO CL4NX-J Plus 609dpi";
-
         private readonly string protcolAndPrinterName = "DRV:SATO CL4NX-J Plus 609dpi Tokyo Medical Center";
 
         private readonly int timeoutSeconds = 3;
@@ -27,6 +25,7 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
         private readonly string folderPath = Application.StartupPath + "\\" + "Common";
 
         private readonly string layoutFileName = "JptInternalLogisticsLabelLayout.mllayx";
+
 
         /// <summary>
         /// Print product label
@@ -61,20 +60,29 @@ namespace Com.ZimVie.Wcs.ZWCS.Cbm
                 throw new Framework.ApplicationException(messageData);
             }
 
-            // Set print data and execute output
-            List<string> values = new List<string>();
-            values.Add(inVo.ProductName);
-            values.Add(inVo.ItemNumber);
-            values.Add(inVo.LotNumber);
+            // Set line values
+            List<string> lines = new List<string>();
+            lines.Add(inVo.ProductName);
+            lines.Add(inVo.ItemNumber);
+            lines.Add(inVo.LotNumber);
 
             bool dateEmpty = inVo.ExpirationDate == DateTime.MinValue;
             string expirationDate = dateEmpty ? string.Empty : inVo.ExpirationDate.ToString("yy/MM/dd");
-            values.Add(expirationDate);
+            lines.Add(expirationDate);
 
-            values.Add(inVo.ItemNumberWithLegacyItemNumber);               
-            values.Add(inVo.LabelQunaity.ToString());
+            lines.Add(inVo.ItemNumberWithLegacyItemNumber);
 
-            mLComponent.PrnData = string.Join("\t", values);
+            // Set header values
+            List<string> header = new List<string>();
+            header.Add(inVo.WorkOrderNumber);
+            header.Add(inVo.SerialWithinWorkOrder.ToString());
+            header.Add(inVo.SerialCount.ToString());
+
+            // Set print data
+            string headerString = string.Join("\t", header);
+            string lineString = string.Join("\t", lines);
+            string quantity = inVo.LabelQunaity.ToString();
+            mLComponent.PrnData = lineString + "\t" + headerString + "\t" + quantity;
 
             // Set printer label cut option as cut at the end of the printing quantity
             mLComponent.MultiCut = inVo.LabelQunaity;

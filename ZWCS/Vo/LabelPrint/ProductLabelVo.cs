@@ -13,7 +13,7 @@ namespace Com.ZimVie.Wcs.ZWCS.Vo
 
         public int SerialWithinWorkOrder { get; set; }
 
-        public int ProductQunaity { get; set; }
+        public int SerialCount { get; set; }
 
         public int LabelQunaity { get; set; }
 

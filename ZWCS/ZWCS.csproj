@@ -288,6 +288,9 @@
       <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Common\BCODE128H.TTF" />
+    <None Include="Common\JptInternalLogisticsLabelLayout.mllayx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Common\JptProductLabelGlobalVariables.mlglex">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
