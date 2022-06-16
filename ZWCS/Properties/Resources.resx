@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="zwce00001" xml:space="preserve">
-    <value>出荷通知参照番号を入力して下さい。</value>
+    <value>入荷日を入力して下さい。</value>
   </data>
   <data name="zwce00002" xml:space="preserve">
-    <value>出荷通知参照番号[{0}]は、既にユーザー[{1}]が[{2}]に登録を完了しています。</value>
+    <value>入荷日[{0}]は、既にユーザー[{1}]が[{2}]に登録を完了しています。</value>
   </data>
   <data name="zwce00003" xml:space="preserve">
     <value>対象の出荷通知データを取り込んで下さい。</value>

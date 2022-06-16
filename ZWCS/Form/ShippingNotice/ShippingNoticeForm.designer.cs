@@ -34,6 +34,14 @@
             this.ShippingNoticeTrackingNumber_txt = new Com.ZimVie.Wcs.Framework.TextBoxCommon();
             this.TrackingNumber_lbl = new Com.ZimVie.Wcs.Framework.LabelCommon();
             this.ShippingNotice_dgv = new Com.ZimVie.Wcs.Framework.DataGridViewCommon();
+            this.colShippingNoticeLineID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPurchaseOrderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInvoiceNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colItemNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSupplierItemNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLotNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLotQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLotExpirationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Exit_btn = new Com.ZimVie.Wcs.Framework.ButtonCommon();
             this.Import_btn = new Com.ZimVie.Wcs.Framework.ButtonCommon();
             this.SupplierNumberAndName_cmb = new Com.ZimVie.Wcs.Framework.ComboBoxCommon();
@@ -44,14 +52,6 @@
             this.labelCommon2 = new Com.ZimVie.Wcs.Framework.LabelCommon();
             this.labelCommon1 = new Com.ZimVie.Wcs.Framework.LabelCommon();
             this.labelCommon3 = new Com.ZimVie.Wcs.Framework.LabelCommon();
-            this.colShippingNoticeLineID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPurchaseOrderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInvoiceNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colItemNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSupplierItemNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLotNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLotQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLotExpirationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ShippingNotice_dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,9 +78,9 @@
             this.TrackingNumber_lbl.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TrackingNumber_lbl.Location = new System.Drawing.Point(71, 169);
             this.TrackingNumber_lbl.Name = "TrackingNumber_lbl";
-            this.TrackingNumber_lbl.Size = new System.Drawing.Size(103, 15);
+            this.TrackingNumber_lbl.Size = new System.Drawing.Size(43, 15);
             this.TrackingNumber_lbl.TabIndex = 29;
-            this.TrackingNumber_lbl.Text = "出荷通知追跡番号";
+            this.TrackingNumber_lbl.Text = "入荷日";
             // 
             // ShippingNotice_dgv
             // 
@@ -130,6 +130,65 @@
             this.ShippingNotice_dgv.RowTemplate.Height = 21;
             this.ShippingNotice_dgv.Size = new System.Drawing.Size(903, 440);
             this.ShippingNotice_dgv.TabIndex = 3;
+            // 
+            // colShippingNoticeLineID
+            // 
+            this.colShippingNoticeLineID.DataPropertyName = "ShippingNoticeLineId";
+            this.colShippingNoticeLineID.HeaderText = "Shipping Notice Line ID";
+            this.colShippingNoticeLineID.Name = "colShippingNoticeLineID";
+            this.colShippingNoticeLineID.Visible = false;
+            // 
+            // colPurchaseOrderNumber
+            // 
+            this.colPurchaseOrderNumber.DataPropertyName = "PurchaseOrderNumber";
+            this.colPurchaseOrderNumber.FillWeight = 50.76142F;
+            this.colPurchaseOrderNumber.HeaderText = "発注番号";
+            this.colPurchaseOrderNumber.Name = "colPurchaseOrderNumber";
+            this.colPurchaseOrderNumber.ReadOnly = true;
+            // 
+            // colInvoiceNumber
+            // 
+            this.colInvoiceNumber.DataPropertyName = "InvoiceNumber";
+            this.colInvoiceNumber.FillWeight = 149.2386F;
+            this.colInvoiceNumber.HeaderText = "納品書番号";
+            this.colInvoiceNumber.Name = "colInvoiceNumber";
+            this.colInvoiceNumber.ReadOnly = true;
+            // 
+            // colItemNumber
+            // 
+            this.colItemNumber.DataPropertyName = "ItemNumber";
+            this.colItemNumber.HeaderText = "品目番号";
+            this.colItemNumber.Name = "colItemNumber";
+            this.colItemNumber.ReadOnly = true;
+            // 
+            // colSupplierItemNumber
+            // 
+            this.colSupplierItemNumber.DataPropertyName = "SupplierItemNumber";
+            this.colSupplierItemNumber.HeaderText = "仕入先品目番号";
+            this.colSupplierItemNumber.Name = "colSupplierItemNumber";
+            this.colSupplierItemNumber.ReadOnly = true;
+            this.colSupplierItemNumber.Visible = false;
+            // 
+            // colLotNumber
+            // 
+            this.colLotNumber.DataPropertyName = "LotNumber";
+            this.colLotNumber.HeaderText = "ロット番号";
+            this.colLotNumber.Name = "colLotNumber";
+            this.colLotNumber.ReadOnly = true;
+            // 
+            // colLotQuantity
+            // 
+            this.colLotQuantity.DataPropertyName = "LotQuantity";
+            this.colLotQuantity.HeaderText = "ロット数量";
+            this.colLotQuantity.Name = "colLotQuantity";
+            this.colLotQuantity.ReadOnly = true;
+            // 
+            // colLotExpirationDate
+            // 
+            this.colLotExpirationDate.DataPropertyName = "LotExpirationDate";
+            this.colLotExpirationDate.HeaderText = "滅菌期限";
+            this.colLotExpirationDate.Name = "colLotExpirationDate";
+            this.colLotExpirationDate.ReadOnly = true;
             // 
             // Exit_btn
             // 
@@ -262,65 +321,6 @@
             this.labelCommon3.TabIndex = 104;
             this.labelCommon3.Text = "(＊)";
             this.labelCommon3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // colShippingNoticeLineID
-            // 
-            this.colShippingNoticeLineID.DataPropertyName = "ShippingNoticeLineId";
-            this.colShippingNoticeLineID.HeaderText = "Shipping Notice Line ID";
-            this.colShippingNoticeLineID.Name = "colShippingNoticeLineID";
-            this.colShippingNoticeLineID.Visible = false;
-            // 
-            // colPurchaseOrderNumber
-            // 
-            this.colPurchaseOrderNumber.DataPropertyName = "PurchaseOrderNumber";
-            this.colPurchaseOrderNumber.FillWeight = 50.76142F;
-            this.colPurchaseOrderNumber.HeaderText = "発注番号";
-            this.colPurchaseOrderNumber.Name = "colPurchaseOrderNumber";
-            this.colPurchaseOrderNumber.ReadOnly = true;
-            // 
-            // colInvoiceNumber
-            // 
-            this.colInvoiceNumber.DataPropertyName = "InvoiceNumber";
-            this.colInvoiceNumber.FillWeight = 149.2386F;
-            this.colInvoiceNumber.HeaderText = "納品書番号";
-            this.colInvoiceNumber.Name = "colInvoiceNumber";
-            this.colInvoiceNumber.ReadOnly = true;
-            // 
-            // colItemNumber
-            // 
-            this.colItemNumber.DataPropertyName = "ItemNumber";
-            this.colItemNumber.HeaderText = "品目番号";
-            this.colItemNumber.Name = "colItemNumber";
-            this.colItemNumber.ReadOnly = true;
-            // 
-            // colSupplierItemNumber
-            // 
-            this.colSupplierItemNumber.DataPropertyName = "SupplierItemNumber";
-            this.colSupplierItemNumber.HeaderText = "仕入先品目番号";
-            this.colSupplierItemNumber.Name = "colSupplierItemNumber";
-            this.colSupplierItemNumber.ReadOnly = true;
-            this.colSupplierItemNumber.Visible = false;
-            // 
-            // colLotNumber
-            // 
-            this.colLotNumber.DataPropertyName = "LotNumber";
-            this.colLotNumber.HeaderText = "ロット番号";
-            this.colLotNumber.Name = "colLotNumber";
-            this.colLotNumber.ReadOnly = true;
-            // 
-            // colLotQuantity
-            // 
-            this.colLotQuantity.DataPropertyName = "LotQuantity";
-            this.colLotQuantity.HeaderText = "ロット数量";
-            this.colLotQuantity.Name = "colLotQuantity";
-            this.colLotQuantity.ReadOnly = true;
-            // 
-            // colLotExpirationDate
-            // 
-            this.colLotExpirationDate.DataPropertyName = "LotExpirationDate";
-            this.colLotExpirationDate.HeaderText = "滅菌期限";
-            this.colLotExpirationDate.Name = "colLotExpirationDate";
-            this.colLotExpirationDate.ReadOnly = true;
             // 
             // ShippingNoticeForm
             // 

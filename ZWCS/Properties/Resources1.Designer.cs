@@ -61,7 +61,7 @@ namespace Com.ZimVie.Wcs.ZWCS.Properties {
         }
         
         /// <summary>
-        ///   出荷通知参照番号を入力して下さい。 に類似しているローカライズされた文字列を検索します。
+        ///   入荷日を入力して下さい。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string zwce00001 {
             get {
@@ -70,7 +70,7 @@ namespace Com.ZimVie.Wcs.ZWCS.Properties {
         }
         
         /// <summary>
-        ///   出荷通知参照番号[{0}]は、既にユーザー[{1}]が[{2}]に登録を完了しています。 に類似しているローカライズされた文字列を検索します。
+        ///   入荷日[{0}]は、既にユーザー[{1}]が[{2}]に登録を完了しています。 に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string zwce00002 {
             get {
